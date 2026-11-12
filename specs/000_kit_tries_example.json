@@ -1,0 +1,382 @@
+{
+ "id": "000_kit_tries_example",
+ "style": "tries",
+ "series": "Wibbo Tries",
+ "voices": {
+  "wibbo": {
+   "voice": "am_fenrir",
+   "speed": 0.95,
+   "fx": "rubberband=pitch=1.35:formant=shifted:pitchq=quality",
+   "polish": true
+  },
+  "narrator": {
+   "voice": "af_heart",
+   "speed": 0.95
+  },
+  "duck": {
+   "voice": "af_bella",
+   "speed": 0.9,
+   "fx": "rubberband=pitch=1.6:formant=shifted:pitchq=quality"
+  }
+ },
+ "keywords": [
+  "brushing teeth",
+  "toothbrush",
+  "healthy habits",
+  "funny kids"
+ ],
+ "phrases": [
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "Time to brush my teeth!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "First, I'll brush my antenna!"
+  },
+  {
+   "by": "narrator",
+   "pause": 1.0,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "duck",
+   "pause": 0.1,
+   "say": "Quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.1,
+   "say": "Brush your teeth, not your antenna!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Okay! Lots and lots of toothpaste!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "Just a tiny bit. Like a little pea."
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.4,
+   "say": "Like this?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "Yes! Now brush round and round."
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "For two whole minutes!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.6,
+   "say": "Sparkly teeth!"
+  },
+  {
+   "by": "duck",
+   "pause": 0.2,
+   "say": "Quack quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.2,
+   "say": "Did you brush your teeth today?"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.7,
+   "say": "See you next time!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "until": 1,
+   "els": [
+    {
+     "t": "act",
+     "at": -1,
+     "do": "intro",
+     "hold": "toothbrush"
+    },
+    {
+     "t": "cap",
+     "at": -1,
+     "text": "Time to brush!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "wrong",
+   "until": 2,
+   "els": [
+    {
+     "t": "act",
+     "at": 1,
+     "do": "antenna"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "name": "wrong_antenna"
+    },
+    {
+     "t": "cap",
+     "at": 1,
+     "text": "Brush my antenna!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 5,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 2
+    },
+    {
+     "t": "act",
+     "at": 2,
+     "do": "no",
+     "recover": {
+      "at": 4
+     }
+    },
+    {
+     "t": "sfx",
+     "at": 2,
+     "name": "no"
+    },
+    {
+     "t": "cap",
+     "at": 4,
+     "text": "Brush your TEETH!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "wrong",
+   "until": 6,
+   "els": [
+    {
+     "t": "act",
+     "at": 5,
+     "do": "toomuch"
+    },
+    {
+     "t": "sfx",
+     "at": 5,
+     "name": "wrong_toomuch"
+    },
+    {
+     "t": "cap",
+     "at": 5,
+     "text": "LOTS of toothpaste!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 7,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 6
+    },
+    {
+     "t": "act",
+     "at": 6,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 6,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 8,
+   "els": [
+    {
+     "t": "act",
+     "at": 7,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 7,
+     "icon": "pea",
+     "delay2": 1.3
+    },
+    {
+     "t": "sfx",
+     "at": 7,
+     "delay": 0.6,
+     "name": "shrink"
+    },
+    {
+     "t": "cap",
+     "at": 7,
+     "text": "Just a|pea-sized bit!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "right",
+   "until": 11,
+   "els": [
+    {
+     "t": "act",
+     "at": 8,
+     "do": "right",
+     "rub": {
+      "at": 9,
+      "delay": 1.2
+     },
+     "calm": {
+      "at": 9
+     }
+    },
+    {
+     "t": "sfx",
+     "at": 9,
+     "delay": 1.2,
+     "name": "rub"
+    },
+    {
+     "t": "timer",
+     "at": 10
+    },
+    {
+     "t": "cap",
+     "at": 8,
+     "text": "Like this?",
+     "big": false,
+     "to": 9
+    },
+    {
+     "t": "cap",
+     "at": 9,
+     "text": "Round and round!",
+     "big": false,
+     "to": 10
+    },
+    {
+     "t": "cap",
+     "at": 10,
+     "text": "2 whole|minutes!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "cheer",
+   "until": 13,
+   "els": [
+    {
+     "t": "act",
+     "at": 11,
+     "do": "cheer",
+     "sparkle": true
+    },
+    {
+     "t": "sfx",
+     "at": 11,
+     "delay": -0.15,
+     "name": "sparkle"
+    },
+    {
+     "t": "cap",
+     "at": 11,
+     "text": "Sparkly teeth!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ask",
+   "until": 14,
+   "els": [
+    {
+     "t": "act",
+     "at": 13,
+     "do": "smile"
+    },
+    {
+     "t": "sfx",
+     "at": 13,
+     "delay": -0.1,
+     "name": "question"
+    },
+    {
+     "t": "cap",
+     "at": 13,
+     "text": "Did YOU brush|today?",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ending",
+   "until": "end",
+   "els": [
+    {
+     "t": "end",
+     "at": 14,
+     "delay": -0.5
+    },
+    {
+     "t": "sfx",
+     "at": 14,
+     "delay": -0.5,
+     "name": "end"
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "title": "Wibbo brushes|his teeth?",
+  "icon": "toothbrush"
+ },
+ "sources": [
+  "American Dental Association (MouthHealthy): brush for two minutes, twice a day; a pea-sized amount of fluoride toothpaste for young children. https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth"
+ ],
+ "post": {
+  "instagram_caption": "Wibbo is brushing his teeth... sort of! Can you spot what he gets wrong?\n\nA pea-sized bit of toothpaste and two whole minutes. Does your little one brush like that?\n\nSilly Wibbo. Smart kids.\n\n#wibbo #brushingteeth #kidslearning #healthyhabits #funnykids",
+  "youtube_title": "Wibbo Brushes His Antenna?! No, Wibbo!",
+  "youtube_description": "Wibbo tries to brush his teeth and gets it all wrong. Learn the right way: a pea-sized bit of toothpaste, round and round, for two whole minutes.\n\nSilly Wibbo. Smart kids.\n\n#wibbo #brushingteeth #shorts",
+  "made_for_kids": true
+ }
+}

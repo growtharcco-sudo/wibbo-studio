@@ -1,0 +1,218 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>@font-face{font-family:Poppins;font-weight:700;src:url(../../assets/fonts/Poppins-Bold.ttf)}html,body{margin:0;background:#000}svg{display:block}</style>
+<script src="wibbo.js"></script><script src="props.js"></script><script src="sets.js"></script></head><body>
+<svg id="s" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg"></svg>
+<script>
+// Spec-driven Wibbo engine. make_reel.py resolves every beat to seconds ("T"), so this file only knows time.
+// It draws the same characters, props, captions, stamp and end card as episodes 1 and 2.
+let SP, SET, LIPS=[], FPS=30, ELS=[], ACTS=[], EGGEL=null, ENDEL=null, STAMPS=[], DUCKPH=[], HOLDS=false;
+const lip=t=>LIPS[Math.round(t*FPS)]||0;
+const byT=(a,b)=>a.T-b.T;
+
+window.setData=function(spec,lips){
+  SP=spec; SET=SETS[spec.style]; LIPS=lips.z||[]; FPS=lips.fps||30; ELS=[]; ACTS=[];
+  spec.scenes.forEach((sc,i)=>sc.els.forEach(e=>{e.t0=sc.t0; e.t1=sc.t1; e.si=i; ELS.push(e);}));
+  ACTS=ELS.filter(e=>e.t==='act').sort(byT);
+  EGGEL=ELS.find(e=>e.t==='egg')||null; ENDEL=ELS.find(e=>e.t==='end')||null;
+  STAMPS=ELS.filter(e=>e.t==='stamp').map(e=>e.T);
+  DUCKPH=(spec.phrases||[]).filter(p=>p.by==='duck');
+  HOLDS=ACTS.some(a=>a.hold);
+  // paste pile carried from act to act (toothbrush gag)
+  let P=0; for(const a of ACTS){a.pile0=P; if(a.do==='toomuch')P=215; else if(a.do==='lesson'&&P>100)P=13; else if(a.do==='right')P=0; a.pile1=P;}
+};
+function actAt(t){let a=ACTS[0]; for(const x of ACTS) if(x.T<=t+1e-6) a=x; return a;}
+function prevAct(a){const i=ACTS.indexOf(a); return i>0?ACTS[i-1]:null;}
+function holdAt(t){let h=null; for(const x of ACTS) if(x.T<=t+1e-6&&x.hold!==undefined) h=x.hold; return h;}
+const duckTalk=t=>DUCKPH.some(p=>t>=p.T&&t<p.T+0.8);
+
+window.render=function(t){
+  const S=SET.S, ZX=SET.ZX, ZY=SET.ZY, PK=SET.pk;
+  // ---- screen shake on every stamp and on the hatch ----
+  let sh=0; for(const a of STAMPS) if(t>=a&&t<a+0.3) sh=10*(1-seg(t,a,a+0.3));
+  if(EGGEL&&EGGEL.hatch&&t>=EGGEL.hatch.T&&t<EGGEL.hatch.T+0.35) sh=Math.max(sh,8);
+  let g=`<g transform="translate(${sh*sin(t*90)},${sh*cos(t*77)})">`+SET.bg(t);
+
+  // ---- Wibbo pose from the current act ----
+  const A=actAt(t), a=A.T, E=A.t1, talk=lip(t), hold=holdAt(t);
+  const B={mood:'happy',blink:((t+1)%2.9)<0.12||((t+0.4)%4.3)<0.09,talk,lookX:SET.lookX??0.9,lookY:SET.lookY??-0.3,ant:8*sin(t*4.1),armR:hold?60:0,armL:hold?20:0};
+  let bh=0, rot=0, SX=1, SY=1, zfx='', grin=0, foam=0;
+  const hand=[ZX+58*S+10, ZY-62*S+40], mouth=[ZX, ZY-40*S];
+  let held=[hand[0]+40, hand[1]-150, 110], pile=A.pile0, heldBob=true;
+  const pancake=(t0,amt=0.5)=>{const u=t-t0; if(u<0||u>1.0) return;
+    const k=u<0.07?lerp(1,1-amt,u/0.07):1-amt*Math.exp(-(u-0.07)*6)*cos((u-0.07)*24); SY*=k; SX*=1+(1-k)*0.9;
+    if(u<0.35){const o=1-u/0.35; for(let i=0;i<6;i++){const ang=PI+i*PI/5; zfx+=`<line x1="${ZX+PK[0]*cos(ang)}" y1="${ZY-PK[1]+PK[2]*sin(ang)}" x2="${ZX+(PK[3]+PK[4]*u)*cos(ang)}" y2="${ZY-PK[1]+(PK[5]+PK[6]*u)*sin(ang)}" stroke="#fff" stroke-width="${PK[7]}" stroke-linecap="round" opacity="${o}"/>`;}}
+    if(u>0.15&&u<1.0&&(!PK[12]||amt>0.3)){const o=1-ease(seg(u,0.8,1.0)); for(let i=0;i<3;i++){const ang=t*7+i*2.09; zfx+=`<g opacity="${o}">${star(ZX+PK[8]*cos(ang),ZY-PK[9]+PK[10]*sin(ang),PK[11],t*200,'#ffd23f')}</g>`;}}};
+  const hop=(a,h)=>{ if(t>=a-0.18&&t<a){const u=seg(t,a-0.18,a); SY*=1-0.16*sin(PI*u*0.5); SX*=1+0.10*sin(PI*u*0.5);}
+    if(t>=a&&t<a+0.5){const j=seg(t,a,a+0.5); bh=Math.max(bh,sin(PI*j)*h); SY*=1+0.14*sin(PI*j); SX*=1-0.08*sin(PI*j);}
+    if(t>=a+0.5&&t<a+0.7){const u=seg(t,a+0.5,a+0.7); SY*=1-0.14*sin(PI*u); SX*=1+0.10*sin(PI*u);} };
+  const happyTalk=()=>{B.mood=talk>0.06?'happy':'joy';};
+  const P=prevAct(A);
+  switch(A.do){
+   case 'intro':
+     hop(a+0.35,50); happyTalk(); rot=5*sin(t*5)*talk; B.lookX=hold?0.4:0.5;
+     if(hold){B.armR=120; held=[hand[0]+30+6*sin(t*3), hand[1]-170, 100];}
+     else B.armL=lerp(0,130,ease(seg(t,a+0.4,a+0.7)))+20*sin(t*13)*(t>a+0.7&&t<a+2.2?1:0);
+     break;
+   case 'surprise': {const u=t-a; B.mood=u<0.5?'shock':'sus'; B.lookX=1; B.lookY=0.5;
+     if(u<0.45){bh=sin(PI*u/0.45)*55; rot=-12*sin(PI*u/0.45);} else {rot=lerp(0,14,ease(seg(u,0.45,0.8))); B.armL=60;} break;}
+   case 'guess': {const st=E+0.15; hop(a,80);
+     if(t<st-0.35){happyTalk(); B.armR=lerp(0,155,ease(seg(t,a,a+0.25))); B.lookX=0.2; B.lookY=-0.2; rot=-6+5*sin(t*6)*talk;}
+     else {B.mood='happy'; B.armR=155; B.armL=lerp(0,120,seg(t,st-0.35,st-0.1)); B.lookX=0.2; B.lookY=-0.2; rot=-10;}
+     break;}
+   case 'no':
+     if(A.head){ const jump=a+0.1; pancake(a,0.3);
+       if(t<jump+0.6){B.mood='shock';B.lookY=-1;B.lookX=0.6;}
+       else {pancake(jump+0.6,0.25); B.mood='joy';B.lookX=0;B.lookY=-0.6;B.armL=130+20*sin(t*12);B.armR=130-20*sin(t*12); rot=4*sin(t*5);} break; }
+     pancake(a,0.48); B.mood=t<a+0.5?'shock':'sad'; B.lookX=hold?0.5:0; B.lookY=t<a+0.5?-0.8:0.5;
+     B.ant=35*sin(t*30)*Math.exp(-(t-a)*4); if(t>a+0.5){B.droop=hold?24:28; rot=hold?0:4;}
+     if(P&&P.do==='toomuch'){B.armR=95; held=[hand[0]-10, hand[1]-60, 0]; pile=215;}
+     if(A.recover&&t>=A.recover.T){B.mood='calm';B.lookX=0.9;B.lookY=-0.2;B.droop=0;rot=0;}
+     break;
+   case 'lean': B.mood='sus';B.lookX=1;B.lookY=-0.2;B.armL=60+10*sin(t*5);B.ant=18*sin(t*3);
+     rot=8+4*sin(t*9)*(EGGEL&&EGGEL.rumble&&EGGEL.hatch?seg(t,EGGEL.rumble.T,EGGEL.hatch.T):0);
+     for(const d of (A.digits||[])){const c=d.T; if(t>=c&&t<c+0.25){const u=seg(t,c,c+0.25); SY*=1-0.08*sin(PI*u); SX*=1+0.06*sin(PI*u);}}
+     break;
+   case 'smile': B.mood='happy'; B.lookX=0; B.lookY=0; B.armL=150; B.armR=150; if(P&&P.sparkle) grin=1-seg(t,a,a+0.3);
+     if(hold) held=[hand[0]+60, hand[1]-260, 60]; break;
+   case 'shock': {B.mood='shock';B.lookY=-0.5;B.lookX=1; const j=seg(t,a,a+0.55); bh=sin(PI*j)*120; rot=-14*sin(PI*j); SY*=1+0.15*sin(PI*j); break;}
+   case 'cheer':
+     if(A.sparkle){grin=1; B.mood='joy'; hop(a,70); B.armL=150; B.armR=lerp(80,150,seg(t,a,a+0.3)); B.lookX=0; B.lookY=0; foam=1-seg(t,a,a+0.4);
+       if(hold) held=[hand[0]+60, hand[1]-260, 60];
+       if(t>=a-0.15&&t<a+1.4){for(let i=0;i<5;i++){const an=i/5*2*PI+t*2, rr=95*S*0.5*ease(seg(t,a-0.15,a+0.3)); zfx+=star(ZX+rr*cos(an),ZY-bh+SET.bob*sin(t*3.2)-46*S+rr*0.6*sin(an),18+12*Math.abs(sin(t*8+i)),t*150,i%2?'#ffd23f':'#fff');}}
+     } else {hop(a,60); happyTalk(); B.lookX=0;B.lookY=0;B.armR=155;B.armL=155; rot=-8+5*sin(t*6)*talk; if(hold) held=[hand[0]+60, hand[1]-260, 60];}
+     break;
+   case 'antenna': {const sc0=a+0.7, u=seg(t,a+0.7,a+1.1); B.armR=lerp(120,165,u); B.lookY=-1; B.lookX=0.3; B.mood=t>sc0?'joy':'happy';
+     const ax=ZX+16*S+12, ay=ZY-168*S+14, sc=t>=sc0?28*sin((t-sc0)*28):0;
+     held=[lerp(hand[0]+30,ax+sc,ease(u)), lerp(hand[1]-170,ay+10,ease(u)), lerp(100,68,ease(u))]; rot=-6+(t>=sc0?4*sin(t*14):0);
+     if(t>=sc0){B.ant=16*sin((t-sc0)*28); for(let i=0;i<5;i++){const q=(t*3+i*1.3)%1; zfx+=`<circle cx="${ax+(i-2)*30}" cy="${ay-40-q*120}" r="${10+q*14}" fill="#fff" opacity="${0.8*(1-q)}"/>`;}}
+     break;}
+   case 'toomuch': {hop(a,60); happyTalk(); B.armR=95; B.armL=70; B.lookX=0.8; B.lookY=-0.4; rot=-5; held=[hand[0]-10, hand[1]-60, 0];
+     const sq=a+0.9; pile=t>=sq?lerp(0,215,ease(seg(t,sq,sq+1.6))):0; if(pile>120){B.mood='shock';B.lookY=-1;} break;}
+   case 'upside': hop(a,60); happyTalk(); B.armR=155; B.lookY=-0.6; held=[hand[0]-30, hand[1]-230, 180]; break;
+   case 'lesson': B.mood='calm'; B.lookX=0.9; B.lookY=-0.3; if(hold&&A.pile0>100){B.armR=95; held=[hand[0]-10, hand[1]-60, 0];}
+     pile=A.pile0>100?lerp(215,13,ease(seg(t,a+0.6,a+1.4))):A.pile0; break;
+   case 'right': {pile=13; const R=A.rub.T, u0=ease(seg(t,a,a+0.35));
+     hop(a,45); happyTalk(); B.armR=135; B.lookX=0.4; B.lookY=-0.6;
+     held=[lerp(hand[0]-10,hand[0]-20,u0), lerp(hand[1]-60,hand[1]-240,u0), lerp(0,-25,u0)];
+     if(A.calm&&t>=A.calm.T){B.mood='happy';B.lookX=0;B.lookY=0;}
+     if(t>=R-0.5){const u=ease(seg(t,R-0.5,R)); grin=u; B.mood='joy'; B.lookX=0; B.lookY=-0.2; B.armR=lerp(135,80,u);
+       const w=(t-R)*12, cx=mouth[0]+70+18*cos(w), cy=mouth[1]-6+12*sin(w);
+       held=[lerp(hand[0]-20,cx,u), lerp(hand[1]-240,cy,u), lerp(-25,8,u)]; pile=t<R?13*(1-u):0; heldBob=false;
+       foam=seg(t,R,R+2.0); rot=3*sin(t*12)*seg(t,R,R+0.3);}
+     break;}
+  }
+  B.sy=SY*(1+0.03*sin(t*6.4)); B.sx=SX*(1-0.03*sin(t*6.4));
+  const bob=SET.bob*sin(t*3.2), wy=ZY-bh+bob;
+
+  // ---- props behind Wibbo ----
+  let duckHead=null;
+  if(EGGEL){ const r=eggLayer(t); g+=r.g; duckHead=r.head; }
+  if(SET.duckXY){ const dq=duckTalk(t), dhop=DUCKPH.reduce((m,p)=>t>=p.T&&t<p.T+0.5?sin(PI*seg(t,p.T,p.T+0.5))*40:m,0);
+    g+=`<g transform="translate(${SET.duckXY[0]},${SET.duckXY[1]-dhop}) scale(.42)">${duck({blink:(t%2.6)<0.12,flap:dq?30*Math.abs(sin(t*14)):4*sin(t*3),open:dq?Math.abs(sin(t*18)):0})}</g>`; }
+  let tubeUp=0, tubeSq=0, sqT=null;
+  if(hold==='toothbrush'||HOLDS&&ACTS.some(x=>x.hold==='toothbrush')){
+    const tm=ACTS.find(x=>x.do==='toomuch');
+    if(tm){sqT=tm.T+0.9; const back=seg(t,tm.t1+0.35,tm.t1+0.85); tubeUp=seg(t,sqT-0.6,sqT-0.1)*(1-back); tubeSq=t>=sqT&&t<tm.t1+0.15?0.5+0.5*sin((t-sqT)*12):0;}
+  }
+  const tx=lerp(760,held[0]+40,tubeUp), ty=lerp(1210,held[1]-150-Math.min(pile,200)*1.6,tubeUp), trot=lerp(0,-130,tubeUp);
+  const showTube=HOLDS&&ACTS.some(x=>x.hold==='toothbrush');
+  if(showTube&&tubeUp<0.5) g+=tube(tx,ty,trot,tubeSq);
+
+  // ---- Wibbo ----
+  g+=`<ellipse cx="${ZX}" cy="${ZY+SET.shadowDy}" rx="${SET.shadowRx*(1-bh/(SET.pk[12]?500:600))*SX}" ry="${SET.shadowRy}" fill="${SET.shadow}" opacity="${SET.shadowOp||.3}"/>`;
+  const zt=`translate(${ZX},${wy}) rotate(${rot}) scale(${S})`;
+  g+=`<g transform="${zt}">${bop(B)}</g>`;
+  if(grin>0) g+=`<g transform="${zt} scale(${B.sx},${B.sy})" opacity="${grin}"><path d="M-30 -54 Q0 -12 30 -54 Z" fill="#7a2d2d"/><path d="M-27 -53 L27 -53 L24 -44 L-24 -44Z" fill="#fff"/><path d="M-9 -53 L-9 -45 M9 -53 L9 -45" stroke="#d8e4ea" stroke-width="2"/><path d="M-16 -26 Q0 -20 16 -26 Q0 -34 -16 -26Z" fill="#ff8fa3"/></g>`;
+  if(foam>0){let fg=''; for(let i=0;i<9;i++){const q=i*0.7+1.1, rr=(16+((i*7)%9))*S*0.32; fg+=`<circle cx="${ZX+(cos(q*2.3)*34)*S*0.5}" cy="${wy-46*S+(sin(q*3.1)*16)*S*0.4}" r="${rr*foam*(0.8+0.2*sin(t*6+i))}" fill="#fff"/>`;} g+=`<g opacity=".92">${fg}</g>`;}
+  if(duckHead){ const hdY=wy-(1-SY)*300; g+=`<g transform="translate(${duckHead.x},${duckHead.done?hdY-335*SY*S/1.95:duckHead.y}) scale(${duckHead.s})">${duckHead.dk}</g>`; }
+  if(hold){ const hb=heldBob&&A.do!=='right'?bob:0;
+    if(hold==='toothbrush') g+=brush(held[0],held[1]+hb,held[2],paste(pile));
+    else g+=`<g transform="translate(${held[0]},${held[1]+hb-40}) rotate(${held[2]>150?180:0}) scale(.6)">${icon(hold)}</g>`; }
+  if(showTube&&tubeUp>=0.5) g+=tube(tx,ty,trot,tubeSq);
+  if(sqT!==null&&t>=sqT&&t<sqT+1.6) g+=`<path d="M${tx-80} ${ty+30} Q${tx-60} ${ty+90} ${held[0]-6} ${held[1]-60-pile*1.2}" fill="none" stroke="#e9fff6" stroke-width="22" stroke-linecap="round"/>`;
+
+  // ---- scene elements inside the shaking layer ----
+  let top='';
+  for(const e of ELS){
+    if(e.t==='bubble'){ const st=e.t1+0.15; if(t<e.T||t>st+0.15) continue;
+      const s=t<st?eob(seg(t,e.T+0.45,e.T+0.8)):1-ease(seg(t,st,st+0.15)); if(s>0) top+=bubble(SET.bubble[0],SET.bubble[1],s,icon(e.icon)); }
+    else if(e.t==='callout'){ const T0=e.T+(e.delay2||0); if(t<T0||t>=e.t1+0.4) continue; const cx=hold?held[0]+170:SET.callout[0], cy=hold?held[1]-200:SET.callout[1]; top+=callout(e.icon,cx,cy,eob(seg(t,T0,T0+0.4))); }
+    else if(e.t==='timer'){ if(t<e.T||t>=e.t1) continue; top+=timerDial(SET.timer[0],SET.timer[1],eob(seg(t,e.T,e.T+0.35)),seg(t,e.T,e.t1)); }
+  }
+  g+=zfx+top;
+  g+=`</g>`;
+
+  // ---- text layer ----
+  for(const e of ELS){
+    if(e.t==='cap'&&t>=e.T&&t<e.E) g+=caption(e.text,e.at===-1?1:(t-e.T)/2.2,e.big,SET.capY,SET.capBig);
+    if(e.t==='digit'&&t>=e.T&&t<e.T+0.9) g+=digit(e.n,seg(t,e.T,e.T+0.9),SET.digitY);
+  }
+  for(const s of STAMPS) g+=stamp(t,s,SET.stampY);
+  if(ENDEL&&t>=ENDEL.T) g+=endCard(t,ENDEL);
+  document.getElementById('s').innerHTML=g;
+};
+
+function eggLayer(t){ // the mystery egg: wobble, cracks, peeks, hatch, hatchling (episode 1)
+  const e=EGGEL, EX=SET.EX, EY=SET.EY, cr=e.cracks||[], c1=cr[0]?cr[0].T:1e9, c2=cr[1]?cr[1].T:1e9;
+  const HT=e.hatch?e.hatch.T:1e9, RT=e.rumble?e.rumble.T:1e9, JT=e.jump?e.jump.T:1e9;
+  const hatched=t>=HT, hu=seg(t,HT,HT+0.7);
+  const wob=hatched?0:(t<1.2?14*sin(t*9)*Math.exp(-t*1.5):0)
+     +(t>=c1&&t<c1+0.6?9*sin((t-c1)*40)*(1-seg(t,c1,c1+0.6)):0)
+     +(t>=c2&&t<c2+1.0?10*sin((t-c2)*38)*(1-seg(t,c2,c2+1.0)):0)
+     +(t>=RT&&!hatched?(3+6*seg(t,RT,HT))*sin(t*34):0);
+  let g=`<g transform="translate(${EX},${EY+270})"><ellipse cx="0" cy="34" rx="320" ry="70" fill="#8a5a2b"/><ellipse cx="0" cy="14" rx="320" ry="64" fill="#c68a3f"/>`+
+     [...Array(13)].map((_,i)=>`<path d="M${-290+i*48} ${10+8*sin(i)} q30 ${-34-10*(i%3)} 62 6" fill="none" stroke="#e6b561" stroke-width="12" stroke-linecap="round"/>`).join('')+`</g>`;
+  const onHead=t>=JT, jd=seg(t,JT,JT+0.6), talkD=duckTalk(t);
+  let dx=EX, dy=lerp(EY+60,EY-30,eob(hu)), ds=1;
+  if(onHead){const u=ease(jd); dx=lerp(EX,SET.ZX+10,u); dy=lerp(EY-30,SET.ZY-169*SET.S,u)-420*sin(PI*u); ds=lerp(1,0.52,u);}
+  const inside=e.inside||'duck';
+  const dk=inside==='duck'?duck({flap:hatched?(t<HT+1.8||onHead?38*Math.abs(sin(t*14)):6*sin(t*5)):0,blink:(t%2.3)<0.12,open:talkD?Math.abs(sin(t*20)):0})
+                          :`<g transform="translate(0,${-40+10*sin(t*5)}) scale(1.3)">${icon(inside)}</g>`;
+  if(!hatched){
+    let q=`<g transform="translate(${EX},${EY+270}) rotate(${wob}) translate(0,-270)">`;
+    const peekAt=(c,i)=>{ if(!c||!c.peek) return ''; const st=i===0?0.2:0.85, en=i===0?0.55:1.15;
+      if(t<c.T+st) return ''; const u=eob(seg(t,c.T+st,c.T+en));
+      if(i===0) return `<g transform="translate(-150,150) rotate(38) scale(${u})">${c.peek==='foot'?foot(16*sin(t*9)):`<g transform="rotate(-38)">${c.peek==='tuft'?tuft():icon(c.peek)}</g>`}</g>`;
+      return `<g transform="translate(5,-250) scale(${u}) rotate(${8*sin(t*8)})">${c.peek==='tuft'?tuft():c.peek==='foot'?foot(16*sin(t*9)):`<g transform="scale(.5)">${icon(c.peek)}</g>`}</g>`; };
+    q+=peekAt(cr[0],0)+eggBody();
+    if(t>=c1){ q+=`<path d="M-205 120 L-160 150 L-185 190 L-140 200" fill="none" stroke="#7a5a2e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M-176 130 L-122 126 L-132 182 L-168 176Z" fill="#3b2a14"/>`+peekAt(cr[0],0); }
+    if(t>=c2){ q+=`<path d="M-60 -262 L-30 -225 L5 -255 L40 -222 L70 -258" fill="none" stroke="#7a5a2e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>`+peekAt(cr[1],1); }
+    if(t>=RT){ q+=`<path d="M${ZIG.map(p=>p.join(' ')).join(' L')}" fill="none" stroke="#7a5a2e" stroke-width="${6+4*seg(t,RT,HT)}" stroke-linejoin="round" clip-path="url(#eggc)" opacity="${seg(t,RT,RT+0.3)}"/>`; }
+    g+=q+`</g>`;
+    for(const c of cr) if(c.sound&&t>=c.T+0.25&&t<c.T+1.3) g+=popword(c.sound,EX+230,EY-240,seg(t,c.T+0.25,c.T+1.3));
+  } else {
+    g+=`<g transform="translate(${EX},${EY})"><g clip-path="url(#botc)"><path d="${EGG}" fill="#e9d6ae"/></g></g>`;
+    if(!onHead) g+=`<g transform="translate(${dx},${dy})">${dk}</g>`;
+    g+=`<g transform="translate(${EX},${EY})"><g clip-path="url(#botc)">${eggBody()}</g></g>`;
+    const fu=seg(t,HT,HT+1.1);
+    if(fu<1) g+=`<g transform="translate(${EX+420*fu},${EY-900*fu+700*fu*fu}) rotate(${260*fu})" opacity="${1-ease(seg(fu,0.75,1))}"><g clip-path="url(#topc)">${eggBody()}</g></g>`;
+    if(t<HT+1.6){for(let i=0;i<12;i++){const an=i/12*2*PI+t, rr=420*ease(seg(t,HT,HT+0.6)); g+=star(EX+rr*cos(an),EY-40+rr*sin(an),14+12*Math.abs(sin(t*6+i)),t*120,i%2?'#ffd23f':'#fff');}}
+  }
+  return {g, head:onHead?{x:dx,y:dy,s:ds,dk,done:jd>=1}:null};
+}
+
+function endCard(t,e){
+  const T=e.T, u=seg(t,T,T+0.35), p1=eob(seg(t,T+0.1,T+0.6)), p2=eob(seg(t,T+0.3,T+0.8));
+  let g=`<g opacity="${ease(u)}"><rect width="${W}" height="${H}" fill="#1d2b53"/>`;
+  for(let i=0;i<14;i++){const a=i/14*2*PI+t*0.3; g+=`<path d="M540 1000 L${540+1600*cos(a)} ${1000+1600*sin(a)} L${540+1600*cos(a+0.18)} ${1000+1600*sin(a+0.18)}Z" fill="#26386b"/>`;}
+  g+=`<g transform="translate(540,560) rotate(-4) scale(${p1})" font-family="Poppins" font-weight="700" text-anchor="middle" stroke-linejoin="round"><text y="60" font-size="205" stroke="#fff" stroke-width="40" fill="#fff">WIBBO</text><text y="60" font-size="205" fill="#2ec4b6">WIBBO</text></g>`;
+  g+=`<g transform="translate(540,760) scale(${p1})" font-family="Poppins" font-weight="700" font-size="64" text-anchor="middle"><text fill="#ffd23f">Silly Wibbo. Smart kids.</text></g>`;
+  const EB={mood:lip(t)>0.06?'happy':'joy',talk:lip(t),armL:130+20*sin(t*12),armR:130-20*sin(t*12),ant:10*sin(t*6),blink:(t%2.7)<0.1};
+  const yb=(e.buddy?1500:1560)+16*sin(t*3.5);
+  g+=`<g transform="translate(540,${yb}) scale(${2.5*p2})">${bop(EB)}</g>`;
+  if(e.buddy) g+=`<g transform="translate(${540-150*p2},${yb-420*p2}) scale(${0.62*p2}) rotate(-8)">${e.buddy==='duck'?duck({flap:30*Math.abs(sin(t*10)),blink:(t%2.3)<0.12,open:duckTalk(t)?1:0}):`<g transform="scale(1.4)">${icon(e.buddy)}</g>`}</g>`;
+  return g+`</g>`;
+}
+
+window.cover=function(c){ // the Reel cover: the set, Wibbo looking at a big thought bubble, and the title
+  const S=SET.S;
+  let g=SET.bg(0);
+  if(EGGEL) g+=eggLayer(0.6).g;
+  const B={mood:'sus',lookX:1,lookY:-0.4,armL:60,ant:12};
+  g+=`<ellipse cx="${SET.ZX}" cy="${SET.ZY+SET.shadowDy}" rx="${SET.shadowRx}" ry="${SET.shadowRy}" fill="${SET.shadow}" opacity="${SET.shadowOp||.3}"/>`;
+  g+=`<g transform="translate(${SET.ZX},${SET.ZY}) rotate(8) scale(${S})">${bop(B)}</g>`;
+  if(c.icon) g+=bubble(SET.bubble[0]+(EGGEL?0:290),SET.bubble[1]-(EGGEL?0:40),1,icon(c.icon));
+  g+=caption(c.title,1,true,SET.capY+40,SET.capBig);
+  document.getElementById('s').innerHTML=g;
+};
+</script></body></html>

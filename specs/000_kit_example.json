@@ -1,0 +1,497 @@
+{
+ "id": "000_kit_example",
+ "style": "mystery",
+ "series": "Mystery Egg",
+ "voices": {
+  "wibbo": {
+   "voice": "am_fenrir",
+   "speed": 0.95,
+   "fx": "rubberband=pitch=1.35:formant=shifted:pitchq=quality",
+   "polish": true
+  },
+  "narrator": {
+   "voice": "af_heart",
+   "speed": 0.95
+  },
+  "duck": {
+   "voice": "af_bella",
+   "speed": 0.9,
+   "fx": "rubberband=pitch=1.6:formant=shifted:pitchq=quality"
+  }
+ },
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "duck",
+  "funny kids"
+ ],
+ "phrases": [
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "Ooh! A mystery egg! What's inside?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "hold": 0.7
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.2,
+   "say": "I know! It's a carrot!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "hold": 0.3
+  },
+  {
+   "by": "duck",
+   "pause": 0.0,
+   "say": "Quack!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Aha! It's a yellow bus!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "What do you think it is?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Three!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Two!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "One!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "It's a duck!"
+  },
+  {
+   "by": "duck",
+   "pause": 0.2,
+   "say": "Quack quack!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "A duck! I knew it!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "duck",
+   "pause": 0.2,
+   "say": "Quack quack!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.7,
+   "say": "See you next time!"
+  },
+  {
+   "by": "duck",
+   "pause": 0.15,
+   "say": "Quack!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "until": 1,
+   "els": [
+    {
+     "t": "act",
+     "at": -1,
+     "do": "intro"
+    },
+    {
+     "t": "egg",
+     "at": -1,
+     "inside": "duck",
+     "cracks": [
+      {
+       "at": 1,
+       "delay": 0.0,
+       "peek": "foot",
+       "sound": null
+      },
+      {
+       "at": 4,
+       "delay": 0.0,
+       "peek": "tuft",
+       "sound": "Quack!"
+      }
+     ],
+     "rumble": {
+      "at": 9
+     },
+     "hatch": {
+      "at": 12,
+      "delay": -0.2
+     },
+     "jump": {
+      "at": 15,
+      "delay": 0.1
+     }
+    },
+    {
+     "t": "cap",
+     "at": -1,
+     "text": "What's inside|the egg?",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "crack",
+   "until": 2,
+   "els": [
+    {
+     "t": "act",
+     "at": 1,
+     "do": "surprise"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "name": "crack"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "delay": 0.25,
+     "name": "drop"
+    }
+   ]
+  },
+  {
+   "kind": "guess",
+   "until": 3,
+   "els": [
+    {
+     "t": "act",
+     "at": 2,
+     "do": "guess"
+    },
+    {
+     "t": "bubble",
+     "at": 2,
+     "icon": "carrot"
+    },
+    {
+     "t": "sfx",
+     "at": 2,
+     "delay": 0.5,
+     "name": "drop"
+    },
+    {
+     "t": "cap",
+     "at": 2,
+     "text": "A carrot?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 4,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 3
+    },
+    {
+     "t": "act",
+     "at": 3,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 3,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "crack",
+   "until": 6,
+   "els": [
+    {
+     "t": "act",
+     "at": 4,
+     "do": "surprise"
+    },
+    {
+     "t": "sfx",
+     "at": 4,
+     "name": "crack"
+    },
+    {
+     "t": "sfx",
+     "at": 4,
+     "delay": 0.25,
+     "name": "drop"
+    }
+   ]
+  },
+  {
+   "kind": "guess",
+   "until": 7,
+   "els": [
+    {
+     "t": "act",
+     "at": 6,
+     "do": "guess"
+    },
+    {
+     "t": "bubble",
+     "at": 6,
+     "icon": "bus"
+    },
+    {
+     "t": "sfx",
+     "at": 6,
+     "delay": 0.5,
+     "name": "drop"
+    },
+    {
+     "t": "cap",
+     "at": 6,
+     "text": "A yellow bus?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 8,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 7
+    },
+    {
+     "t": "act",
+     "at": 7,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 7,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "ask",
+   "until": 9,
+   "els": [
+    {
+     "t": "act",
+     "at": 8,
+     "do": "lean"
+    },
+    {
+     "t": "sfx",
+     "at": 8,
+     "delay": -0.1,
+     "name": "question"
+    },
+    {
+     "t": "cap",
+     "at": 8,
+     "text": "What do YOU think?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "countdown",
+   "until": 12,
+   "els": [
+    {
+     "t": "digit",
+     "at": 9,
+     "n": "3"
+    },
+    {
+     "t": "digit",
+     "at": 10,
+     "n": "2"
+    },
+    {
+     "t": "digit",
+     "at": 11,
+     "n": "1"
+    },
+    {
+     "t": "sfx",
+     "at": 9,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "sfx",
+     "at": 10,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "sfx",
+     "at": 11,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "act",
+     "at": 9,
+     "do": "lean",
+     "digits": [
+      {
+       "at": 9
+      },
+      {
+       "at": 10
+      },
+      {
+       "at": 11
+      }
+     ]
+    },
+    {
+     "t": "duckmusic",
+     "at": 9,
+     "delay": -0.3
+    }
+   ]
+  },
+  {
+   "kind": "hatch",
+   "until": 14,
+   "els": [
+    {
+     "t": "act",
+     "at": 12,
+     "delay": -0.2,
+     "do": "shock"
+    },
+    {
+     "t": "sfx",
+     "at": 12,
+     "delay": -0.2,
+     "name": "hatch"
+    },
+    {
+     "t": "cap",
+     "at": 12,
+     "text": "It's a DUCK!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "cheer",
+   "until": 15,
+   "els": [
+    {
+     "t": "act",
+     "at": 14,
+     "do": "cheer"
+    },
+    {
+     "t": "cap",
+     "at": 14,
+     "text": "I knew it!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 17,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 15
+    },
+    {
+     "t": "act",
+     "at": 15,
+     "do": "no",
+     "head": true
+    },
+    {
+     "t": "sfx",
+     "at": 15,
+     "name": "no_head"
+    }
+   ]
+  },
+  {
+   "kind": "ending",
+   "until": "end",
+   "els": [
+    {
+     "t": "end",
+     "at": 17,
+     "delay": -0.5,
+     "buddy": "duck"
+    },
+    {
+     "t": "sfx",
+     "at": 17,
+     "delay": -0.5,
+     "name": "end"
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "title": "What's|inside?"
+ },
+ "sources": [],
+ "post": {
+  "instagram_caption": "Wibbo found a mystery egg! Can you guess what's inside before he does?\n\nComment your guess before the countdown ends.\n\nSilly Wibbo. Smart kids.\n\n#wibbo #kidslearning #guessinggame #funnykids #kidsvideos",
+  "youtube_title": "What's Inside the Mystery Egg? No, Wibbo!",
+  "youtube_description": "Wibbo finds a mystery egg and guesses a carrot, then a bus. Can you guess what's really inside?\n\nSilly Wibbo. Smart kids.\n\n#wibbo #kidslearning #shorts",
+  "made_for_kids": true
+ }
+}
