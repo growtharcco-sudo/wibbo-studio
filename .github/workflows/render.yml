@@ -27,6 +27,6 @@ jobs:
           if [ "$MODE" = "sheet" ]; then python pipeline/make_reel.py "$SPEC" --sheet --allow-old-sources
           else python pipeline/make_reel.py "$SPEC" --allow-old-sources; fi
           echo "::notice::rendered $SPEC $MODE: $(ls queue/*/ | tr '\n' ' ')"
-          for f in queue/*/video.mp4; do [ -f "$f" ] && echo "::notice::$(ffprobe -v error -show_entries stream=width,height,r_frame_rate -show_entries format=duration,bit_rate -of compact=p=0 "$f" | tr '\n' ' ')"; done
+          for f in queue/*/video.mp4; do if [ -f "$f" ]; then echo "::notice::$(ffprobe -v error -show_entries stream=width,height,r_frame_rate -show_entries format=duration,bit_rate -of compact=p=0 "$f" | tr '\n' ' ')"; fi; done
       - uses: actions/upload-artifact@v4
         with: { name: reel, path: queue/ }

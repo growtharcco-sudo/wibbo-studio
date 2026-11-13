@@ -1,1 +1,1 @@
-specs/000_kit_example.json sheet
+specs/000_kit_example.json
