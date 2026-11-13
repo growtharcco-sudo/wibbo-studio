@@ -17,6 +17,8 @@ One Reel a day, made in ONE daily run (section A), all times IST:
   - `mystery` (sky, grass, mystery egg): Wibbo guesses wrong, the viewer guesses, a countdown, the reveal.
   - `tries` (bathroom): Wibbo tries an everyday task the wrong way, gets corrected, then does it right.
 - 20 to 30 seconds. Something on screen changes every 2 to 3 seconds.
+- Only ideas the kit can show clearly. Do NOT use `right` with `at: hands` (James: it looks like Wibbo washes
+  his body) and skip hand-washing topics until that scene is redone. Mystery egg Reels did best so far.
 - Every Reel teaches ONE real, simple, safe fact (in the lesson, the reveal, or at least the caption).
 
 ## 2. Write the script (house style)

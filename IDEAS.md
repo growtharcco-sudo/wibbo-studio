@@ -5,7 +5,7 @@ New icons needed are noted; add them once to `ICONS` (props.js and kit.py).
 
 ## tries (bathroom): Wibbo does it the wrong way, then the right way
 - [x] Brushing teeth: antenna, too much toothpaste; pea-sized, 2 minutes (000_kit_tries_example)
-- [x] Washing hands: washes his antenna; soap, scrub 20 seconds, rinse and dry (CDC) (001_washing_hands)
+- [ ] (on hold) Washing hands: skipped, the scrub-at-hands scene looked like washing his body
 - [ ] Drinking water: drinks from the soap dish; water from a cup helps your body (cup)
 - [ ] Sneezing: sneezes on the mirror; sneeze into your elbow (CDC) (needs a tissue icon)
 - [ ] Bath time: puts socks on before the bath (sock); clothes off, then bath
@@ -14,7 +14,7 @@ New icons needed are noted; add them once to `ICONS` (props.js and kit.py).
 - [ ] Getting dressed: sock on his antenna (sock); socks go on feet, then shoes (shoe)
 
 ## mystery (sky, egg): Wibbo guesses wrong, countdown, reveal
-- [x] Duck egg: carrot? bus? a duck! Duck eggs hatch in 23 to 30 days (000_kit_example)
+- [x] Duck egg: carrot? bus? a duck! Duck eggs hatch in 23 to 30 days (posted as 002_mystery_egg)
 - [ ] Fish egg: guesses a ball and a sun; it's a fish (fish); fish lay eggs too
 - [ ] Turtle egg: guesses a cookie and a car; a baby turtle runs to the sea (needs a turtle icon)
 - [ ] Penguin egg: guesses a banana and a book; penguin dads keep the egg warm (needs a penguin icon)
