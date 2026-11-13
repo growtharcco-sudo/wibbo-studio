@@ -2,34 +2,182 @@
  "id": "000_kit_example",
  "style": "mystery",
  "series": "Mystery Egg",
- "keywords": ["mystery egg", "guessing game", "duck", "funny kids"],
- "beats": [
-  {"by": "wibbo", "say": "Ooh! A mystery egg! What's inside?", "cap": "What's inside|the egg?", "show": {"kind": "hook", "inside": "duck"}},
-  {"hold": 0.7, "pause": 0.3, "show": {"kind": "crack", "peek": "foot"}},
-  {"by": "wibbo", "say": "I know! It's a carrot!", "cap": "A carrot?", "pause": 0.2, "show": {"kind": "guess", "icon": "carrot"}},
-  {"say": "No, Wibbo!", "pause": 0.4, "show": {"kind": "no"}},
-  {"hold": 0.3, "pause": 0.6, "show": {"kind": "crack", "peek": "tuft", "sound": "Quack!"}},
-  {"by": "duck", "say": "Quack!", "pause": 0},
-  {"by": "wibbo", "say": "Aha! It's a yellow bus!", "cap": "A yellow bus?", "pause": 0.5, "show": {"kind": "guess", "icon": "bus"}},
-  {"say": "No, Wibbo!", "pause": 0.4, "show": {"kind": "no"}},
-  {"say": "What do you think it is?", "cap": "What do YOU think?", "pause": 0.5, "show": {"kind": "ask"}},
-  {"say": "Three!", "speed": 1.0, "pause": 0.5, "show": {"kind": "countdown"}},
-  {"say": "Two!", "speed": 1.0, "pause": 0.5},
-  {"say": "One!", "speed": 1.0, "pause": 0.5},
-  {"say": "It's a duck!", "cap": "It's a DUCK!", "pause": 0.6, "show": {"kind": "hatch"}},
-  {"by": "duck", "say": "Quack quack!", "pause": 0.2},
-  {"by": "wibbo", "say": "A duck! I knew it!", "cap": "I knew it!", "pause": 0.3, "show": {"kind": "cheer"}},
-  {"say": "No, Wibbo!", "speed": 0.9, "pause": 0.4, "show": {"kind": "no", "head": true}},
-  {"by": "duck", "say": "Quack quack!", "pause": 0.2},
-  {"by": "wibbo", "say": "See you next time!", "pause": 0.7, "show": {"kind": "ending"}},
-  {"by": "duck", "say": "Quack!", "pause": 0.15}
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "duck",
+  "funny kids"
  ],
- "cover": {"title": "What's|inside?"},
- "sources": [],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "Ooh! A mystery egg! What's inside?",
+   "cap": "What's inside|the egg?",
+   "show": {
+    "kind": "hook",
+    "inside": "duck"
+   }
+  },
+  {
+   "hold": 0.7,
+   "pause": 0.3,
+   "show": {
+    "kind": "crack",
+    "peek": "foot"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I know! It's a carrot!",
+   "cap": "A carrot?",
+   "pause": 0.2,
+   "show": {
+    "kind": "guess",
+    "icon": "carrot"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "hold": 0.3,
+   "pause": 0.6,
+   "show": {
+    "kind": "crack",
+    "peek": "tuft",
+    "sound": "Quack!"
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Quack!",
+   "pause": 0
+  },
+  {
+   "by": "wibbo",
+   "say": "Aha! It's a yellow bus!",
+   "cap": "A yellow bus?",
+   "pause": 0.5,
+   "show": {
+    "kind": "guess",
+    "icon": "bus"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "say": "What do you think it is?",
+   "cap": "What do YOU think?",
+   "pause": 0.5,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "say": "Three!",
+   "speed": 1.0,
+   "pause": 0.5,
+   "show": {
+    "kind": "countdown"
+   }
+  },
+  {
+   "say": "Two!",
+   "speed": 1.0,
+   "pause": 0.5
+  },
+  {
+   "say": "One!",
+   "speed": 1.0,
+   "pause": 0.5
+  },
+  {
+   "say": "It's a duck!",
+   "cap": "It's a DUCK!",
+   "pause": 0.6,
+   "show": {
+    "kind": "hatch"
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Quack quack!",
+   "pause": 0.2
+  },
+  {
+   "by": "wibbo",
+   "say": "A duck! I knew it!",
+   "cap": "I knew it!",
+   "pause": 0.3,
+   "show": {
+    "kind": "cheer"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "speed": 0.9,
+   "pause": 0.4,
+   "show": {
+    "kind": "no",
+    "head": true
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Quack quack!",
+   "pause": 0.2
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Quack!",
+   "pause": 0.15
+  }
+ ],
+ "cover": {
+  "title": "What's|inside?"
+ },
+ "sources": [
+  {
+   "fact": "Mallard duck eggs hatch after 23 to 30 days of incubation; ducklings are covered in down and can leave the nest within about a day",
+   "url": "https://www.allaboutbirds.org/guide/Mallard/lifehistory",
+   "fetched": "2026-11-13"
+  }
+ ],
  "post": {
-  "instagram_caption": "Wibbo found a mystery egg! Can you guess what's inside before he does?\n\nComment your guess before the countdown ends.\n\nSilly Wibbo. Smart kids.\n\n#wibbo #kidslearning #guessinggame #funnykids #kidsvideos",
+  "slot": "evening",
+  "post_at": "2026-11-13T18:30:00+05:30",
+  "instagram_caption": "Wibbo found a mystery egg! Is it a carrot? A bus? No, Wibbo!\n\nDuck eggs take about 23 to 30 days to hatch, and the fluffy ducklings are ready to leave the nest in about a day.\n\nSilly Wibbo. Smart kids.\n\nWhat did YOU think was inside the egg?\n\n#wibbo #kidslearning #guessinggame #funnykids #ducklings",
   "youtube_title": "What's Inside the Mystery Egg? No, Wibbo!",
-  "youtube_description": "Wibbo finds a mystery egg and guesses a carrot, then a bus. Can you guess what's really inside?\n\nSilly Wibbo. Smart kids.\n\n#wibbo #kidslearning #shorts",
+  "youtube_description": "Wibbo finds a mystery egg and guesses a carrot, then a yellow bus. Count down with us to find out what's really inside! Duck eggs take about 23 to 30 days to hatch.\n\nSources:\n• Cornell Lab of Ornithology, All About Birds, \"Mallard Life History\" (fetched Nov 13, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #KidsLearning #Shorts",
   "made_for_kids": true
- }
+ },
+ "math": [
+  {
+   "expr": "23",
+   "expect": "23",
+   "note": "Mallard incubation, low end (Cornell All About Birds)"
+  },
+  {
+   "expr": "30",
+   "expect": "30",
+   "note": "Mallard incubation, high end (Cornell All About Birds)"
+  }
+ ]
 }

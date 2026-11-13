@@ -1,0 +1,32 @@
+name: Render a Reel
+# Backup only: the daily run renders in Claude's workspace. Push checks/render.txt (one line: a spec path,
+# add " sheet" for the check sheet only) to test it, or run it by hand from the Actions tab.
+on:
+  workflow_dispatch:
+    inputs:
+      spec: { description: "Spec path, e.g. specs/002_slug.json", required: true }
+      sheet_only: { description: "Only make the check sheet", type: boolean, default: false }
+  push:
+    branches: [main]
+    paths: ["checks/render.txt"]
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg && ffmpeg -hide_banner -filters 2>/dev/null | grep -q rubberband && echo "ffmpeg has rubberband"
+      - uses: actions/cache@v4
+        with: { path: models, key: kokoro-v1.0 }
+      - run: pip install -q -r requirements.txt && python -m playwright install --with-deps chromium
+      - name: Render
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then read SPEC MODE < checks/render.txt; else SPEC="${{ inputs.spec }}"; MODE=""; [ "${{ inputs.sheet_only }}" = "true" ] && MODE=sheet; fi
+          if [ "$MODE" = "sheet" ]; then python pipeline/make_reel.py "$SPEC" --sheet --allow-old-sources
+          else python pipeline/make_reel.py "$SPEC" --allow-old-sources; fi
+          echo "::notice::rendered $SPEC $MODE: $(ls queue/*/ | tr '\n' ' ')"
+          for f in queue/*/video.mp4; do [ -f "$f" ] && echo "::notice::$(ffprobe -v error -show_entries stream=width,height,r_frame_rate -show_entries format=duration,bit_rate -of compact=p=0 "$f" | tr '\n' ' ')"; done
+      - uses: actions/upload-artifact@v4
+        with: { name: reel, path: queue/ }

@@ -172,7 +172,8 @@ def build_spec(brief):
         scenes.append({"kind": kind, "until": end if end < len(beats) else "end", "els": els})
     spec = {"id": brief["id"], "style": style, "series": brief.get("series", ""), "voices": VOICES,
             "keywords": brief.get("keywords", []), "phrases": phrases, "scenes": scenes,
-            "cover": brief.get("cover", {}), "sources": brief.get("sources", []), "post": brief.get("post", {})}
+            "cover": brief.get("cover", {}), "sources": brief.get("sources", []), "math": brief.get("math", []),
+            "post": brief.get("post", {})}
     return spec, ctx["errors"]
 
 

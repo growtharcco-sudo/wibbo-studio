@@ -1,7 +1,13 @@
+# videos and covers live only on the `media` branch, never in main's history
 models/
 queue/*/video.mp4
 queue/*/cover.png
+queue/*/cover_yt.jpg
 queue/*/*.wav
 queue/*/lips.json
+queue/*/check*
+queue/*/sheet.png
 queue/*/parts/
+.changed
 __pycache__/
+*.pyc

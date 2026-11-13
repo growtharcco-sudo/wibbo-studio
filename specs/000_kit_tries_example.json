@@ -371,12 +371,25 @@
   "icon": "toothbrush"
  },
  "sources": [
-  "American Dental Association (MouthHealthy): brush for two minutes, twice a day; a pea-sized amount of fluoride toothpaste for young children. https://www.mouthhealthy.org/all-topics-a-z/brushing-your-teeth"
+  {
+   "fact": "Brush twice a day for 2 minutes; young children need a pea-sized amount of fluoride toothpaste",
+   "url": "https://www.healthychildren.org/English/healthy-living/oral-health/Pages/toothbrushing-tips-for-young-children.aspx",
+   "fetched": "2026-11-13"
+  }
+ ],
+ "math": [
+  {
+   "expr": "2",
+   "expect": "2",
+   "note": "brush for 2 minutes (American Academy of Pediatrics, HealthyChildren.org)"
+  }
  ],
  "post": {
-  "instagram_caption": "Wibbo is brushing his teeth... sort of! Can you spot what he gets wrong?\n\nA pea-sized bit of toothpaste and two whole minutes. Does your little one brush like that?\n\nSilly Wibbo. Smart kids.\n\n#wibbo #brushingteeth #kidslearning #healthyhabits #funnykids",
+  "slot": "evening",
+  "post_at": "2026-11-13T18:30:00+05:30",
+  "instagram_caption": "Wibbo is brushing his teeth... sort of! He brushed his antenna and used a mountain of toothpaste.\n\nThe right way: a pea-sized bit of toothpaste, round and round, for 2 whole minutes, twice a day.\n\nSilly Wibbo. Smart kids.\n\nDid YOU brush your teeth today?\n\n#wibbo #brushingteeth #kidslearning #healthyhabits #funnykids",
   "youtube_title": "Wibbo Brushes His Antenna?! No, Wibbo!",
-  "youtube_description": "Wibbo tries to brush his teeth and gets it all wrong. Learn the right way: a pea-sized bit of toothpaste, round and round, for two whole minutes.\n\nSilly Wibbo. Smart kids.\n\n#wibbo #brushingteeth #shorts",
+  "youtube_description": "Wibbo tries to brush his teeth and gets it all wrong. Learn the right way: a pea-sized bit of toothpaste, round and round, for 2 whole minutes, twice a day.\n\nSources:\n• American Academy of Pediatrics, HealthyChildren.org, \"Toothbrushing Tips for Young Children\" (fetched Nov 13, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #BrushingTeeth #Shorts",
   "made_for_kids": true
  }
 }

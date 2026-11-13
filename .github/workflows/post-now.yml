@@ -1,0 +1,41 @@
+name: Post now (instant posts)
+
+# Reels marked "now": true (e.g. the end-to-end test) are posted the moment they are queued.
+on:
+  push:
+    branches: [main]
+    paths: ["queue/**"]
+  workflow_dispatch:
+
+concurrency: { group: post-now, cancel-in-progress: false }
+permissions: { contents: write }
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q requests google-api-python-client google-auth pillow
+      - name: Post "now" Reels
+        id: post
+        continue-on-error: true
+        env:
+          PAGES_BASE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_PRIVACY: ${{ vars.YT_PRIVACY || 'public' }}
+        run: python poster/publish_due.py --now-only
+      - name: Save results
+        env: { GITHUB_TOKEN: "${{ github.token }}" }
+        run: |
+          git config user.name wibbo-bot && git config user.email wibbo-bot@users.noreply.github.com
+          git add -A queue posted && git commit -q -m "instant post results" && git pull -q --rebase origin main && git push -q || echo "nothing to save"
+          if [ "$(cat .changed 2>/dev/null)" = "1" ]; then python poster/media_branch.py prune; fi
+      - if: steps.post.outcome == 'failure'
+        run: exit 1
