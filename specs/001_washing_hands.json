@@ -1,0 +1,324 @@
+{
+ "id": "001_washing_hands",
+ "style": "tries",
+ "series": "Wibbo Tries",
+ "voices": {
+  "wibbo": {
+   "voice": "am_fenrir",
+   "speed": 0.95,
+   "fx": "rubberband=pitch=1.35:formant=shifted:pitchq=quality",
+   "polish": true
+  },
+  "narrator": {
+   "voice": "af_heart",
+   "speed": 0.95
+  },
+  "duck": {
+   "voice": "af_bella",
+   "speed": 0.9,
+   "fx": "rubberband=pitch=1.6:formant=shifted:pitchq=quality"
+  }
+ },
+ "keywords": [
+  "washing hands",
+  "handwashing",
+  "healthy habits",
+  "funny kids",
+  "wibbo"
+ ],
+ "phrases": [
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "Time to wash my hands!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "I'll wash my antenna!"
+  },
+  {
+   "by": "narrator",
+   "pause": 1.0,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "duck",
+   "pause": 0.1,
+   "say": "Quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.1,
+   "say": "Wash your hands, not your antenna!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Use soap, and scrub for twenty seconds."
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.4,
+   "say": "Like this?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "Yes! Rub, rub, rub, all over your hands."
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "Then rinse and dry!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.6,
+   "say": "Squeaky clean hands!"
+  },
+  {
+   "by": "duck",
+   "pause": 0.2,
+   "say": "Quack quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.2,
+   "say": "Did you wash your hands today?"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.7,
+   "say": "See you next time!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "until": 1,
+   "els": [
+    {
+     "t": "act",
+     "at": -1,
+     "do": "intro",
+     "hold": "soap"
+    },
+    {
+     "t": "cap",
+     "at": -1,
+     "text": "Time to wash!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "wrong",
+   "until": 2,
+   "els": [
+    {
+     "t": "act",
+     "at": 1,
+     "do": "antenna"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "name": "wrong_antenna"
+    },
+    {
+     "t": "cap",
+     "at": 1,
+     "text": "Wash my antenna?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 5,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 2
+    },
+    {
+     "t": "act",
+     "at": 2,
+     "do": "no",
+     "recover": {
+      "at": 4
+     }
+    },
+    {
+     "t": "sfx",
+     "at": 2,
+     "name": "no"
+    },
+    {
+     "t": "cap",
+     "at": 4,
+     "text": "Wash your HANDS!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 6,
+   "els": [
+    {
+     "t": "act",
+     "at": 5,
+     "do": "lesson"
+    },
+    {
+     "t": "timer",
+     "at": 5
+    },
+    {
+     "t": "cap",
+     "at": 5,
+     "text": "Scrub for|20 seconds!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "right",
+   "until": 9,
+   "els": [
+    {
+     "t": "act",
+     "at": 6,
+     "do": "right",
+     "rub": {
+      "at": 7,
+      "delay": 1.2
+     },
+     "calm": {
+      "at": 7
+     },
+     "at_": "hands"
+    },
+    {
+     "t": "sfx",
+     "at": 7,
+     "delay": 1.2,
+     "name": "rub"
+    },
+    {
+     "t": "cap",
+     "at": 6,
+     "text": "Like this?",
+     "big": false,
+     "to": 7
+    },
+    {
+     "t": "cap",
+     "at": 7,
+     "text": "Rub, rub, rub!",
+     "big": false,
+     "to": 8
+    },
+    {
+     "t": "cap",
+     "at": 8,
+     "text": "Rinse and dry!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "cheer",
+   "until": 11,
+   "els": [
+    {
+     "t": "act",
+     "at": 9,
+     "do": "cheer"
+    },
+    {
+     "t": "cap",
+     "at": 9,
+     "text": "Squeaky clean!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ask",
+   "until": 12,
+   "els": [
+    {
+     "t": "act",
+     "at": 11,
+     "do": "smile"
+    },
+    {
+     "t": "sfx",
+     "at": 11,
+     "delay": -0.1,
+     "name": "question"
+    },
+    {
+     "t": "cap",
+     "at": 11,
+     "text": "Did YOU wash|your hands?",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ending",
+   "until": "end",
+   "els": [
+    {
+     "t": "end",
+     "at": 12,
+     "delay": -0.5
+    },
+    {
+     "t": "sfx",
+     "at": 12,
+     "delay": -0.5,
+     "name": "end"
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "title": "Wibbo washes|his hands?",
+  "icon": "soap"
+ },
+ "sources": [
+  {
+   "fact": "Wet hands, apply soap, lather, scrub for at least 20 seconds, rinse under clean running water, dry with a clean towel or air dryer",
+   "url": "https://www.cdc.gov/clean-hands/about/index.html",
+   "fetched": "2026-11-13"
+  }
+ ],
+ "math": [
+  {
+   "expr": "20",
+   "expect": "20",
+   "note": "scrub for at least 20 seconds (CDC, About Handwashing)"
+  }
+ ],
+ "post": {
+  "slot": "test",
+  "post_at": "2026-11-13T22:15:00+05:30",
+  "instagram_caption": "Wibbo is washing his hands... sort of! He scrubbed his antenna instead.\n\nThe right way: soap, scrub all over for 20 seconds, then rinse and dry. Humming Happy Birthday twice takes about that long!\n\nSilly Wibbo. Smart kids.\n\nDid YOU wash your hands today?\n\n#wibbo #washyourhands #kidslearning #healthyhabits #funnykids",
+  "youtube_title": "Wibbo Washes His Antenna?! No, Wibbo!",
+  "youtube_description": "Wibbo tries to wash his hands and scrubs his antenna instead. Learn the right way: soap, scrub for 20 seconds, then rinse and dry. Tip: humming Happy Birthday twice takes about 20 seconds.\n\nSources:\n• Centers for Disease Control and Prevention (CDC), \"About Handwashing\" (fetched Nov 13, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #WashYourHands #Shorts",
+  "made_for_kids": true
+ }
+}

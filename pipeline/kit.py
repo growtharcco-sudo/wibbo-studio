@@ -20,7 +20,8 @@ Scene kinds (fields in brackets). Every kind works in both styles; positions com
   no        [head: true]                                NO, WIBBO! stamp, squash, sad. 2nd beat = calm correction.
                                                          head (mystery, after hatch): the hatchling jumps on his head
   lesson    [icon]                                      the right fact, big caption, icon in a callout (pea, timer, ...)
-  right     [timer: true]                               (tries) the right way: shows item, then brushes/rubs, foam;
+  right     [timer: true, at: hands]                    (tries) the right way: shows item, then brushes/rubs, foam;
+                                                         at: hands = scrubs in front of his hands (soap) instead of his mouth;
                                                          timer: a 2-minute dial on the last beat
   ask       []                                          question to the viewer ("What do YOU think?")
   countdown []                                          one beat per number: 3 beats -> 3, 2, 1
@@ -96,6 +97,7 @@ def k_right(f, b, nb, ctx):
     ctx["pile"] = 0
     act = E("act", b, do="right", rub={"at": b + 1, "delay": 1.2} if nb > 1 else {"at": b, "delay": 1.6})
     if nb > 1: act["calm"] = {"at": b + 1}
+    if f.get("at") == "hands": act["at_"] = "hands"
     els = [act, E("sfx", act["rub"]["at"], delay=act["rub"]["delay"], name="rub")]
     if f.get("timer"): els.append(E("timer", b + nb - 1))
     return els

@@ -1,0 +1,137 @@
+{
+ "id": "001_washing_hands",
+ "style": "tries",
+ "series": "Wibbo Tries",
+ "keywords": [
+  "washing hands",
+  "handwashing",
+  "healthy habits",
+  "funny kids",
+  "wibbo"
+ ],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "Time to wash my hands!",
+   "cap": "Time to wash!",
+   "show": {
+    "kind": "hook",
+    "hold": "soap"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I'll wash my antenna!",
+   "cap": "Wash my antenna?",
+   "pause": 0.3,
+   "show": {
+    "kind": "wrong",
+    "how": "antenna"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "speed": 0.9,
+   "pause": 1.0,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Quack!",
+   "pause": 0.1
+  },
+  {
+   "say": "Wash your hands, not your antenna!",
+   "cap": "Wash your HANDS!",
+   "pause": 0.1
+  },
+  {
+   "say": "Use soap, and scrub for twenty seconds.",
+   "cap": "Scrub for|20 seconds!",
+   "pause": 0.5,
+   "show": {
+    "kind": "lesson",
+    "icon": "timer"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "Like this?",
+   "cap": "Like this?",
+   "pause": 0.4,
+   "show": {
+    "kind": "right",
+    "at": "hands"
+   }
+  },
+  {
+   "say": "Yes! Rub, rub, rub, all over your hands.",
+   "cap": "Rub, rub, rub!",
+   "pause": 0.3
+  },
+  {
+   "say": "Then rinse and dry!",
+   "cap": "Rinse and dry!",
+   "pause": 0.6
+  },
+  {
+   "by": "wibbo",
+   "say": "Squeaky clean hands!",
+   "cap": "Squeaky clean!",
+   "big": true,
+   "pause": 0.6,
+   "show": {
+    "kind": "cheer"
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Quack quack!",
+   "pause": 0.2
+  },
+  {
+   "say": "Did you wash your hands today?",
+   "cap": "Did YOU wash|your hands?",
+   "pause": 0.2,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  }
+ ],
+ "cover": {
+  "title": "Wibbo washes|his hands?",
+  "icon": "soap"
+ },
+ "sources": [
+  {
+   "fact": "Wet hands, apply soap, lather, scrub for at least 20 seconds, rinse under clean running water, dry with a clean towel or air dryer",
+   "url": "https://www.cdc.gov/clean-hands/about/index.html",
+   "fetched": "2026-11-13"
+  }
+ ],
+ "math": [
+  {
+   "expr": "20",
+   "expect": "20",
+   "note": "scrub for at least 20 seconds (CDC, About Handwashing)"
+  }
+ ],
+ "post": {
+  "slot": "test",
+  "post_at": "2026-11-13T22:15:00+05:30",
+  "instagram_caption": "Wibbo is washing his hands... sort of! He scrubbed his antenna instead.\n\nThe right way: soap, scrub all over for 20 seconds, then rinse and dry. Humming Happy Birthday twice takes about that long!\n\nSilly Wibbo. Smart kids.\n\nDid YOU wash your hands today?\n\n#wibbo #washyourhands #kidslearning #healthyhabits #funnykids",
+  "youtube_title": "Wibbo Washes His Antenna?! No, Wibbo!",
+  "youtube_description": "Wibbo tries to wash his hands and scrubs his antenna instead. Learn the right way: soap, scrub for 20 seconds, then rinse and dry. Tip: humming Happy Birthday twice takes about 20 seconds.\n\nSources:\n• Centers for Disease Control and Prevention (CDC), \"About Handwashing\" (fetched Nov 13, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #WashYourHands #Shorts",
+  "made_for_kids": true
+ }
+}

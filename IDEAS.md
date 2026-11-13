@@ -5,7 +5,7 @@ New icons needed are noted; add them once to `ICONS` (props.js and kit.py).
 
 ## tries (bathroom): Wibbo does it the wrong way, then the right way
 - [x] Brushing teeth: antenna, too much toothpaste; pea-sized, 2 minutes (000_kit_tries_example)
-- [ ] Washing hands: only one finger, no soap; soap, scrub, rinse, about 20 seconds (CDC) (soap, cup)
+- [x] Washing hands: washes his antenna; soap, scrub 20 seconds, rinse and dry (CDC) (001_washing_hands)
 - [ ] Drinking water: drinks from the soap dish; water from a cup helps your body (cup)
 - [ ] Sneezing: sneezes on the mirror; sneeze into your elbow (CDC) (needs a tissue icon)
 - [ ] Bath time: puts socks on before the bath (sock); clothes off, then bath
