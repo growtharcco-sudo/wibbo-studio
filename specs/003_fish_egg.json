@@ -1,0 +1,510 @@
+{
+ "id": "003_fish_egg",
+ "style": "mystery",
+ "series": "Mystery Egg",
+ "voices": {
+  "wibbo": {
+   "voice": "am_fenrir",
+   "speed": 0.95,
+   "fx": "rubberband=pitch=1.35:formant=shifted:pitchq=quality",
+   "polish": true
+  },
+  "narrator": {
+   "voice": "af_heart",
+   "speed": 0.95
+  },
+  "duck": {
+   "voice": "af_bella",
+   "speed": 0.9,
+   "fx": "rubberband=pitch=1.6:formant=shifted:pitchq=quality"
+  }
+ },
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "fish",
+  "funny kids"
+ ],
+ "phrases": [
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "Ooh! A mystery egg! What's inside?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "hold": 0.7
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.2,
+   "say": "I know! It's a bouncy ball!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "hold": 0.3
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Aha! It's the sun!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "What do you think it is?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Three!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Two!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "One!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "It's a fish!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "A fish! I knew it!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "Lots of fish hatch from eggs. Clownfish dads guard their eggs for about a week!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.7,
+   "say": "See you next time!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "until": 1,
+   "els": [
+    {
+     "t": "act",
+     "at": -1,
+     "do": "intro"
+    },
+    {
+     "t": "egg",
+     "at": -1,
+     "inside": "fish",
+     "cracks": [
+      {
+       "at": 1,
+       "delay": 0.0,
+       "peek": null,
+       "sound": "Blub!"
+      },
+      {
+       "at": 4,
+       "delay": 0.0,
+       "peek": null,
+       "sound": "Blub!"
+      }
+     ],
+     "rumble": {
+      "at": 8
+     },
+     "hatch": {
+      "at": 11,
+      "delay": -0.2
+     }
+    },
+    {
+     "t": "cap",
+     "at": -1,
+     "text": "What's inside|the egg?",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "crack",
+   "until": 2,
+   "els": [
+    {
+     "t": "act",
+     "at": 1,
+     "do": "surprise"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "name": "crack"
+    }
+   ]
+  },
+  {
+   "kind": "guess",
+   "until": 3,
+   "els": [
+    {
+     "t": "act",
+     "at": 2,
+     "do": "guess"
+    },
+    {
+     "t": "bubble",
+     "at": 2,
+     "icon": "ball"
+    },
+    {
+     "t": "sfx",
+     "at": 2,
+     "delay": 0.5,
+     "name": "drop"
+    },
+    {
+     "t": "cap",
+     "at": 2,
+     "text": "A bouncy ball?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 4,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 3
+    },
+    {
+     "t": "act",
+     "at": 3,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 3,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "crack",
+   "until": 5,
+   "els": [
+    {
+     "t": "act",
+     "at": 4,
+     "do": "surprise"
+    },
+    {
+     "t": "sfx",
+     "at": 4,
+     "name": "crack"
+    }
+   ]
+  },
+  {
+   "kind": "guess",
+   "until": 6,
+   "els": [
+    {
+     "t": "act",
+     "at": 5,
+     "do": "guess"
+    },
+    {
+     "t": "bubble",
+     "at": 5,
+     "icon": "sun"
+    },
+    {
+     "t": "sfx",
+     "at": 5,
+     "delay": 0.5,
+     "name": "drop"
+    },
+    {
+     "t": "cap",
+     "at": 5,
+     "text": "The sun?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 7,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 6
+    },
+    {
+     "t": "act",
+     "at": 6,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 6,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "ask",
+   "until": 8,
+   "els": [
+    {
+     "t": "act",
+     "at": 7,
+     "do": "lean"
+    },
+    {
+     "t": "sfx",
+     "at": 7,
+     "delay": -0.1,
+     "name": "question"
+    },
+    {
+     "t": "cap",
+     "at": 7,
+     "text": "What do YOU think?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "countdown",
+   "until": 11,
+   "els": [
+    {
+     "t": "digit",
+     "at": 8,
+     "n": "3"
+    },
+    {
+     "t": "digit",
+     "at": 9,
+     "n": "2"
+    },
+    {
+     "t": "digit",
+     "at": 10,
+     "n": "1"
+    },
+    {
+     "t": "sfx",
+     "at": 8,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "sfx",
+     "at": 9,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "sfx",
+     "at": 10,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "act",
+     "at": 8,
+     "do": "lean",
+     "digits": [
+      {
+       "at": 8
+      },
+      {
+       "at": 9
+      },
+      {
+       "at": 10
+      }
+     ]
+    },
+    {
+     "t": "duckmusic",
+     "at": 8,
+     "delay": -0.3
+    }
+   ]
+  },
+  {
+   "kind": "hatch",
+   "until": 12,
+   "els": [
+    {
+     "t": "act",
+     "at": 11,
+     "delay": -0.2,
+     "do": "shock"
+    },
+    {
+     "t": "sfx",
+     "at": 11,
+     "delay": -0.2,
+     "name": "hatch"
+    },
+    {
+     "t": "cap",
+     "at": 11,
+     "text": "It's a FISH!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "cheer",
+   "until": 13,
+   "els": [
+    {
+     "t": "act",
+     "at": 12,
+     "do": "cheer"
+    },
+    {
+     "t": "cap",
+     "at": 12,
+     "text": "I knew it!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 14,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 13
+    },
+    {
+     "t": "act",
+     "at": 13,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 13,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 15,
+   "els": [
+    {
+     "t": "act",
+     "at": 14,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 14,
+     "icon": "fish",
+     "delay2": 0.3
+    },
+    {
+     "t": "cap",
+     "at": 14,
+     "text": "Dad guards|the EGGS!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ending",
+   "until": "end",
+   "els": [
+    {
+     "t": "end",
+     "at": 15,
+     "delay": -0.5,
+     "buddy": "fish"
+    },
+    {
+     "t": "sfx",
+     "at": 15,
+     "delay": -0.5,
+     "name": "end"
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "title": "What's|inside?",
+  "icon": "egg"
+ },
+ "sources": [
+  {
+   "fact": "Clownfish (clown anemonefish) lay 100 to 1000 eggs; the male tends and guards the nest, fanning the eggs, for six to seven days until they hatch",
+   "url": "https://aquariumofpacific.org/onlinelearningcenter/species/clown_anemonefish",
+   "fetched": "2026-11-14"
+  }
+ ],
+ "math": [
+  {
+   "expr": "6",
+   "expect": "6",
+   "note": "Clownfish eggs tended by the male, low end (Aquarium of the Pacific)"
+  },
+  {
+   "expr": "7",
+   "expect": "7",
+   "note": "Clownfish eggs tended by the male, high end, about a week (Aquarium of the Pacific)"
+  }
+ ],
+ "post": {
+  "slot": "evening",
+  "post_at": "2026-11-14T18:30:00+05:30",
+  "instagram_caption": "Wibbo found a mystery egg! Is it a bouncy ball? The sun? No, Wibbo!\n\nLots of fish hatch from eggs. Clownfish dads guard their eggs and fan them clean for about 6 to 7 days until they hatch.\n\nSilly Wibbo. Smart kids.\n\nWhat animal should hatch from the next mystery egg?\n\n#wibbo #kidslearning #guessinggame #funnykids #fish",
+  "youtube_title": "What's Inside the Mystery Egg? A Fish? No, Wibbo!",
+  "youtube_description": "Wibbo finds a mystery egg and guesses a bouncy ball, then the sun. Count down with us to find out what's really inside! Lots of fish hatch from eggs, and clownfish dads guard their eggs for about 6 to 7 days until they hatch.\n\nSources:\n• Aquarium of the Pacific, \"Clown Anemonefish\" (fetched Nov 14, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #KidsLearning #Shorts",
+  "made_for_kids": true
+ }
+}

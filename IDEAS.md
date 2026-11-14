@@ -15,7 +15,7 @@ New icons needed are noted; add them once to `ICONS` (props.js and kit.py).
 
 ## mystery (sky, egg): Wibbo guesses wrong, countdown, reveal
 - [x] Duck egg: carrot? bus? a duck! Duck eggs hatch in 23 to 30 days (posted as 002_mystery_egg)
-- [ ] Fish egg: guesses a ball and a sun; it's a fish (fish); fish lay eggs too
+- [x] Fish egg: ball? sun? a fish! Clownfish dads guard their eggs 6 to 7 days (003_fish_egg)
 - [ ] Turtle egg: guesses a cookie and a car; a baby turtle runs to the sea (needs a turtle icon)
 - [ ] Penguin egg: guesses a banana and a book; penguin dads keep the egg warm (needs a penguin icon)
 - [ ] Chick egg: guesses a shoe and a cake; a chick hatches in about 21 days (needs a chick icon)

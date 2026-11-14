@@ -1,0 +1,171 @@
+{
+ "id": "003_fish_egg",
+ "style": "mystery",
+ "series": "Mystery Egg",
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "fish",
+  "funny kids"
+ ],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "Ooh! A mystery egg! What's inside?",
+   "cap": "What's inside|the egg?",
+   "show": {
+    "kind": "hook",
+    "inside": "fish"
+   }
+  },
+  {
+   "hold": 0.7,
+   "pause": 0.3,
+   "show": {
+    "kind": "crack",
+    "sound": "Blub!"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I know! It's a bouncy ball!",
+   "cap": "A bouncy ball?",
+   "pause": 0.2,
+   "show": {
+    "kind": "guess",
+    "icon": "ball"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "hold": 0.3,
+   "pause": 0.6,
+   "show": {
+    "kind": "crack",
+    "sound": "Blub!"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "Aha! It's the sun!",
+   "cap": "The sun?",
+   "pause": 0.5,
+   "show": {
+    "kind": "guess",
+    "icon": "sun"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "say": "What do you think it is?",
+   "cap": "What do YOU think?",
+   "pause": 0.5,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "say": "Three!",
+   "speed": 1.0,
+   "pause": 0.5,
+   "show": {
+    "kind": "countdown"
+   }
+  },
+  {
+   "say": "Two!",
+   "speed": 1.0,
+   "pause": 0.5
+  },
+  {
+   "say": "One!",
+   "speed": 1.0,
+   "pause": 0.5
+  },
+  {
+   "say": "It's a fish!",
+   "cap": "It's a FISH!",
+   "pause": 0.6,
+   "show": {
+    "kind": "hatch"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "A fish! I knew it!",
+   "cap": "I knew it!",
+   "pause": 0.3,
+   "show": {
+    "kind": "cheer"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "speed": 0.9,
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "say": "Lots of fish hatch from eggs. Clownfish dads guard their eggs for about a week!",
+   "cap": "Dad guards|the EGGS!",
+   "pause": 0.3,
+   "show": {
+    "kind": "lesson",
+    "icon": "fish"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  }
+ ],
+ "cover": {
+  "title": "What's|inside?",
+  "icon": "egg"
+ },
+ "sources": [
+  {
+   "fact": "Clownfish (clown anemonefish) lay 100 to 1000 eggs; the male tends and guards the nest, fanning the eggs, for six to seven days until they hatch",
+   "url": "https://aquariumofpacific.org/onlinelearningcenter/species/clown_anemonefish",
+   "fetched": "2026-11-14"
+  }
+ ],
+ "post": {
+  "slot": "evening",
+  "post_at": "2026-11-14T18:30:00+05:30",
+  "instagram_caption": "Wibbo found a mystery egg! Is it a bouncy ball? The sun? No, Wibbo!\n\nLots of fish hatch from eggs. Clownfish dads guard their eggs and fan them clean for about 6 to 7 days until they hatch.\n\nSilly Wibbo. Smart kids.\n\nWhat animal should hatch from the next mystery egg?\n\n#wibbo #kidslearning #guessinggame #funnykids #fish",
+  "youtube_title": "What's Inside the Mystery Egg? A Fish? No, Wibbo!",
+  "youtube_description": "Wibbo finds a mystery egg and guesses a bouncy ball, then the sun. Count down with us to find out what's really inside! Lots of fish hatch from eggs, and clownfish dads guard their eggs for about 6 to 7 days until they hatch.\n\nSources:\n• Aquarium of the Pacific, \"Clown Anemonefish\" (fetched Nov 14, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #KidsLearning #Shorts",
+  "made_for_kids": true
+ },
+ "math": [
+  {
+   "expr": "6",
+   "expect": "6",
+   "note": "Clownfish eggs tended by the male, low end (Aquarium of the Pacific)"
+  },
+  {
+   "expr": "7",
+   "expect": "7",
+   "note": "Clownfish eggs tended by the male, high end, about a week (Aquarium of the Pacific)"
+  }
+ ]
+}
