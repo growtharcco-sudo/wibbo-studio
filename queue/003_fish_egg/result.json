@@ -4,5 +4,5 @@
  "yt_privacy": "public",
  "yt_made_for_kids": true,
  "yt_thumbnail": "not allowed yet (custom thumbnails need a verified channel)",
- "last_error": "2026-11-15T16:19:45.997379+00:00 Instagram API error 400: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AfqGjWU6PQw-xk8JxHOaTEd\"}}"
+ "last_error": "2026-11-15T16:20:07.414182+00:00 Instagram API error 400: {\"error\":{\"message\":\"API access blocked.\",\"code\":200,\"type\":\"OAuthException\",\"error_subcode\":5258005,\"fbtrace_id\":\"AOFcjgCyYmZprgxnJsYGHGq\"}}"
 }
