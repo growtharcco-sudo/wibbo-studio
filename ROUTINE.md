@@ -6,10 +6,11 @@ right answer. Tagline: "Silly Wibbo. Smart kids." Audience: young children and t
 Voices (locked in `pipeline/kit.py`): Wibbo, the narrator and the duck. Every Reel is a short brief built with the
 Reel kit (step 4). GitHub Actions posts every queued Reel at its `post_at`. You never post directly.
 
-One Reel a day, made in ONE daily run (section A), all times IST:
+Two Reels a day, all times IST. One run every OTHER day (section A) makes 4 Reels: 2 for its own day, 2 for the next day:
 | Slot | post_at | Who it reaches |
 |---|---|---|
-| `evening` | today 18:30 | evening for families in India, morning in the US and UK |
+| `morning` | 08:00 | morning for families in India, evening in the US |
+| `evening` | 18:30 | evening for families in India, morning in the US and UK |
 
 ## 1. Pick the idea
 - Take the next open idea from `IDEAS.md` (or a better one) and tick it off. Check `posted/`, `queue/` and
@@ -109,10 +110,12 @@ the idea, the fact and its source, the post time.
 
 ---
 
-## A. Daily run (about 12:45 PM IST)
-Make today's `evening` Reel (post_at today 18:30 IST, "YYYY-MM-DDT18:30:00+05:30") with steps 1 to 7.
-Then ONE SendUserMessage: "<id>: <idea>, posts today 18:30 IST. Reply skip <id>, or tell me what to change.
-No reply = it posts."
+## A. Two-day run (about 2 AM IST, every other day)
+Make 4 Reels, soonest post_at first, with steps 1 to 7 for each: today 08:00, today 18:30, tomorrow 08:00,
+tomorrow 18:30 (e.g. "YYYY-MM-DDT08:00:00+05:30"). Skip any slot that already has a Reel in queue/ (no SKIP file).
+The 4 Reels are 4 different topics, mixing both styles.
+Then ONE SendUserMessage listing them: "<id>: <idea>, posts <day time IST>. ... Reply skip <id>, or tell me what
+to change. No reply = they post."
 If anything fails, do not queue a broken Reel: tell James what failed.
 
 ## B. Replies from James

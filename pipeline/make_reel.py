@@ -14,7 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EM_DASH, EN_DASH = "\u2014", "\u2013"
 IST = dt.timezone(dt.timedelta(hours=5, minutes=30))
 BRAND_TAG = "#wibbo"
-SLOTS = {"evening": "today 18:30 IST", "test": "end-to-end test only"}
+SLOTS = {"morning": "08:00 IST", "evening": "18:30 IST", "test": "end-to-end test only"}
 
 
 def check_spec(spec, allow_old_sources=False):

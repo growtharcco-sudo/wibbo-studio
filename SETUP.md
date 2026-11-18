@@ -49,5 +49,5 @@ Paste only the value (if a label or spaces slip in, the code cleans them).
 3. One real end-to-end post (slot `test`, `"now": true`), then the daily task is switched on.
 
 ## F. Scheduled task (Claude)
-ONE cloud task, "Wibbo daily", runs `ROUTINE.md` section A every day at about 12:45 PM IST (the Reel posts at 18:30).
+ONE cloud task, "Wibbo (group B)", runs `ROUTINE.md` section A every other day (even dates) at about 2 AM IST and makes 4 Reels: 08:00 and 18:30 for that day and the next.
 It needs "Skip all approvals" (Automatically approve) on and no connectors it doesn't use.
