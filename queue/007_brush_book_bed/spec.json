@@ -1,0 +1,377 @@
+{
+ "id": "007_brush_book_bed",
+ "style": "tries",
+ "series": "Wibbo Tries",
+ "voices": {
+  "wibbo": {
+   "voice": "am_fenrir",
+   "speed": 0.95,
+   "fx": "rubberband=pitch=1.35:formant=shifted:pitchq=quality",
+   "polish": true
+  },
+  "narrator": {
+   "voice": "af_heart",
+   "speed": 0.95
+  },
+  "duck": {
+   "voice": "af_bella",
+   "speed": 0.9,
+   "fx": "rubberband=pitch=1.6:formant=shifted:pitchq=quality"
+  }
+ },
+ "keywords": [
+  "bedtime routine",
+  "brush book bed",
+  "healthy habits",
+  "funny kids"
+ ],
+ "phrases": [
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "Bedtime! Story time!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "I'll read it upside down!"
+  },
+  {
+   "by": "narrator",
+   "pause": 1.0,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "duck",
+   "pause": 0.1,
+   "say": "Quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.1,
+   "say": "Turn it the right way up!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Okay! I'll wear it like a hat!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "First, brush your teeth."
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "Next, read a book together."
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "Then, off to bed!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Brush, book, bed! Goodnight!"
+  },
+  {
+   "by": "duck",
+   "pause": 0.2,
+   "say": "Quack quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.2,
+   "say": "What is your favorite bedtime book?"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.7,
+   "say": "See you next time!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "until": 1,
+   "els": [
+    {
+     "t": "act",
+     "at": -1,
+     "do": "intro",
+     "hold": "book"
+    },
+    {
+     "t": "cap",
+     "at": -1,
+     "text": "Story time!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "wrong",
+   "until": 2,
+   "els": [
+    {
+     "t": "act",
+     "at": 1,
+     "do": "upside"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "name": "wrong_upside"
+    },
+    {
+     "t": "cap",
+     "at": 1,
+     "text": "Upside down?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 5,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 2
+    },
+    {
+     "t": "act",
+     "at": 2,
+     "do": "no",
+     "recover": {
+      "at": 4
+     }
+    },
+    {
+     "t": "sfx",
+     "at": 2,
+     "name": "no"
+    },
+    {
+     "t": "cap",
+     "at": 4,
+     "text": "Right way UP!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "wrong",
+   "until": 6,
+   "els": [
+    {
+     "t": "act",
+     "at": 5,
+     "do": "antenna"
+    },
+    {
+     "t": "sfx",
+     "at": 5,
+     "name": "wrong_antenna"
+    },
+    {
+     "t": "cap",
+     "at": 5,
+     "text": "A book hat?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 7,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 6
+    },
+    {
+     "t": "act",
+     "at": 6,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 6,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 8,
+   "els": [
+    {
+     "t": "act",
+     "at": 7,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 7,
+     "icon": "toothbrush",
+     "delay2": 0.3
+    },
+    {
+     "t": "cap",
+     "at": 7,
+     "text": "BRUSH|your teeth!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 9,
+   "els": [
+    {
+     "t": "act",
+     "at": 8,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 8,
+     "icon": "book",
+     "delay2": 0.3
+    },
+    {
+     "t": "cap",
+     "at": 8,
+     "text": "Read a BOOK!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 10,
+   "els": [
+    {
+     "t": "act",
+     "at": 9,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 9,
+     "icon": "moon",
+     "delay2": 0.3
+    },
+    {
+     "t": "cap",
+     "at": 9,
+     "text": "Then BED!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "cheer",
+   "until": 12,
+   "els": [
+    {
+     "t": "act",
+     "at": 10,
+     "do": "cheer",
+     "sparkle": true
+    },
+    {
+     "t": "sfx",
+     "at": 10,
+     "delay": -0.15,
+     "name": "sparkle"
+    },
+    {
+     "t": "cap",
+     "at": 10,
+     "text": "Brush, book,|BED!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ask",
+   "until": 13,
+   "els": [
+    {
+     "t": "act",
+     "at": 12,
+     "do": "smile"
+    },
+    {
+     "t": "sfx",
+     "at": 12,
+     "delay": -0.1,
+     "name": "question"
+    },
+    {
+     "t": "cap",
+     "at": 12,
+     "text": "Your favorite|BOOK?",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ending",
+   "until": "end",
+   "els": [
+    {
+     "t": "end",
+     "at": 13,
+     "delay": -0.5
+    },
+    {
+     "t": "sfx",
+     "at": 13,
+     "delay": -0.5,
+     "name": "end"
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "title": "Wibbo's|bedtime?",
+  "icon": "book"
+ },
+ "sources": [
+  {
+   "fact": "The American Academy of Pediatrics' Brush, Book, Bed routine: each night brush teeth, read a favorite book together, then get to bed at a regular time",
+   "url": "https://www.healthychildren.org/English/healthy-living/oral-health/Pages/Brush-Book-Bed.aspx",
+   "fetched": "2026-11-20"
+  }
+ ],
+ "math": [],
+ "post": {
+  "slot": "evening",
+  "post_at": "2026-11-21T18:30:00+05:30",
+  "instagram_caption": "Wibbo's bedtime story went all wrong! He read his book upside down, then wore it like a hat.\n\nThe right way to end the day: Brush, Book, Bed. Brush your teeth, read a book together, then off to bed.\n\nSilly Wibbo. Smart kids.\n\nWhat is your favorite bedtime book?\n\n#wibbo #kidslearning #bedtime #healthyhabits #funnykids",
+  "youtube_title": "Wibbo Wears a Book Hat at Bedtime?! No, Wibbo!",
+  "youtube_description": "Wibbo's bedtime story goes all wrong. Learn the Brush, Book, Bed routine from the American Academy of Pediatrics: brush your teeth, read a book together, then go to bed at a regular time.\n\nSources:\n• American Academy of Pediatrics, HealthyChildren.org, \"Brush, Book, Bed: How to Structure Your Child's Nighttime Routine\" (fetched Nov 20, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #Bedtime #Shorts",
+  "made_for_kids": true
+ }
+}

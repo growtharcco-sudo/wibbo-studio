@@ -1,0 +1,171 @@
+{
+ "id": "006_turtle_egg",
+ "style": "mystery",
+ "series": "Mystery Egg",
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "sea turtle",
+  "funny kids"
+ ],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "Ooh! A mystery egg! What's inside?",
+   "cap": "What's inside|the egg?",
+   "show": {
+    "kind": "hook",
+    "inside": "turtle"
+   }
+  },
+  {
+   "hold": 0.7,
+   "pause": 0.3,
+   "show": {
+    "kind": "crack",
+    "sound": "Tap!"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I know! It's a cookie!",
+   "cap": "A cookie?",
+   "pause": 0.2,
+   "show": {
+    "kind": "guess",
+    "icon": "cookie"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "hold": 0.3,
+   "pause": 0.6,
+   "show": {
+    "kind": "crack",
+    "sound": "Tap!"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "Aha! It's a red car!",
+   "cap": "A red car?",
+   "pause": 0.5,
+   "show": {
+    "kind": "guess",
+    "icon": "car"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "say": "What do you think it is?",
+   "cap": "What do YOU think?",
+   "pause": 0.5,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "say": "Three!",
+   "speed": 1.0,
+   "pause": 0.5,
+   "show": {
+    "kind": "countdown"
+   }
+  },
+  {
+   "say": "Two!",
+   "speed": 1.0,
+   "pause": 0.5
+  },
+  {
+   "say": "One!",
+   "speed": 1.0,
+   "pause": 0.5
+  },
+  {
+   "say": "It's a turtle!",
+   "cap": "It's a TURTLE!",
+   "pause": 0.6,
+   "show": {
+    "kind": "hatch"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "A turtle! I knew it!",
+   "cap": "I knew it!",
+   "pause": 0.3,
+   "show": {
+    "kind": "cheer"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "speed": 0.9,
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "say": "Baby sea turtles hatch in warm sand, then rush to the sea together!",
+   "cap": "Rush to|the SEA!",
+   "pause": 0.3,
+   "show": {
+    "kind": "lesson",
+    "icon": "moon"
+   }
+  },
+  {
+   "say": "The moon shining on the water helps them find the way.",
+   "cap": "Moon shows|the WAY!",
+   "pause": 0.3
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  }
+ ],
+ "cover": {
+  "title": "What's|inside?",
+  "icon": "egg"
+ },
+ "sources": [
+  {
+   "fact": "Sea turtle eggs incubate in the warm sand for about 60 days; hatchlings hatch together and rush to the sea, finding it by the downward slope of the beach and the reflections of the moon and stars on the water",
+   "url": "https://oceanservice.noaa.gov/facts/turtle-hatch.html",
+   "fetched": "2026-11-20"
+  }
+ ],
+ "post": {
+  "slot": "morning",
+  "post_at": "2026-11-21T08:00:00+05:30",
+  "instagram_caption": "Wibbo found a mystery egg! Is it a cookie? A red car? No, Wibbo!\n\nIt's a baby sea turtle! Sea turtle eggs stay in the warm sand for about 60 days. Then the babies hatch together and rush to the sea, with the moon on the water showing the way.\n\nSilly Wibbo. Smart kids.\n\nWhat would YOU name a baby sea turtle?\n\n#wibbo #kidslearning #guessinggame #funnykids #seaturtle",
+  "youtube_title": "What's Inside the Mystery Egg? A Turtle? No, Wibbo!",
+  "youtube_description": "Wibbo finds a mystery egg and guesses a cookie, then a red car. Count down with us to find out what's really inside! Sea turtle eggs stay in the warm sand for about 60 days, then the babies rush to the sea together.\n\nSources:\n• NOAA National Ocean Service, \"How do sea turtles hatch?\" (fetched Nov 20, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #SeaTurtle #Shorts",
+  "made_for_kids": true
+ },
+ "math": [
+  {
+   "expr": "60",
+   "expect": "60",
+   "note": "sea turtle eggs incubate about 60 days (NOAA National Ocean Service)"
+  }
+ ]
+}

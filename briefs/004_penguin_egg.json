@@ -1,0 +1,176 @@
+{
+ "id": "004_penguin_egg",
+ "style": "mystery",
+ "series": "Mystery Egg",
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "penguin",
+  "funny kids"
+ ],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "Ooh! A mystery egg! What's inside?",
+   "cap": "What's inside|the egg?",
+   "show": {
+    "kind": "hook",
+    "inside": "penguin"
+   }
+  },
+  {
+   "hold": 0.7,
+   "pause": 0.3,
+   "show": {
+    "kind": "crack",
+    "sound": "Peep!"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I know! It's a banana!",
+   "cap": "A banana?",
+   "pause": 0.2,
+   "show": {
+    "kind": "guess",
+    "icon": "banana"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "hold": 0.3,
+   "pause": 0.6,
+   "show": {
+    "kind": "crack",
+    "sound": "Peep!"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "Aha! It's a big book!",
+   "cap": "A big book?",
+   "pause": 0.5,
+   "show": {
+    "kind": "guess",
+    "icon": "book"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "say": "What do you think it is?",
+   "cap": "What do YOU think?",
+   "pause": 0.5,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "say": "Three!",
+   "speed": 1.0,
+   "pause": 0.5,
+   "show": {
+    "kind": "countdown"
+   }
+  },
+  {
+   "say": "Two!",
+   "speed": 1.0,
+   "pause": 0.5
+  },
+  {
+   "say": "One!",
+   "speed": 1.0,
+   "pause": 0.5
+  },
+  {
+   "say": "It's a penguin!",
+   "cap": "It's a PENGUIN!",
+   "pause": 0.6,
+   "show": {
+    "kind": "hatch"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "A penguin! I knew it!",
+   "cap": "I knew it!",
+   "pause": 0.3,
+   "show": {
+    "kind": "cheer"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "speed": 0.9,
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "say": "Penguin dads keep the egg warm on their feet!",
+   "cap": "Dad keeps it|WARM!",
+   "pause": 0.3,
+   "show": {
+    "kind": "lesson",
+    "icon": "egg"
+   }
+  },
+  {
+   "say": "For about two whole months!",
+   "cap": "About 2|months!",
+   "pause": 0.3
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  }
+ ],
+ "cover": {
+  "title": "What's|inside?",
+  "icon": "egg"
+ },
+ "sources": [
+  {
+   "fact": "The female emperor penguin lays one egg and leaves; the father balances it on his feet under his warm brood pouch for about 65 days, about two months, until the females return from the sea",
+   "url": "https://kids.nationalgeographic.com/animals/birds/facts/emperor-penguin",
+   "fetched": "2026-11-20"
+  }
+ ],
+ "post": {
+  "slot": "morning",
+  "post_at": "2026-11-20T08:00:00+05:30",
+  "instagram_caption": "Wibbo found a mystery egg! Is it a banana? A big book? No, Wibbo!\n\nIt's a penguin! Emperor penguin dads keep the egg warm on their feet, under a cozy flap of feathery skin, for about 2 months.\n\nSilly Wibbo. Smart kids.\n\nCould YOU stand still for 2 whole months?\n\n#wibbo #kidslearning #guessinggame #funnykids #penguin",
+  "youtube_title": "What's Inside the Mystery Egg? A Penguin? No, Wibbo!",
+  "youtube_description": "Wibbo finds a mystery egg and guesses a banana, then a big book. Count down with us to find out what's really inside! Emperor penguin dads keep the egg warm on their feet for about 2 months.\n\nSources:\n• National Geographic Kids, \"Emperor Penguin\" (fetched Nov 20, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #Penguin #Shorts",
+  "made_for_kids": true
+ },
+ "math": [
+  {
+   "expr": "65",
+   "expect": "65",
+   "note": "days the emperor penguin father keeps the egg on his feet (National Geographic Kids)"
+  },
+  {
+   "expr": "round(65/30.4)",
+   "expect": "2",
+   "note": "65 days is about 2 months (National Geographic Kids says after about two months)"
+  }
+ ]
+}

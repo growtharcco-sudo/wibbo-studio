@@ -1,0 +1,517 @@
+{
+ "id": "006_turtle_egg",
+ "style": "mystery",
+ "series": "Mystery Egg",
+ "voices": {
+  "wibbo": {
+   "voice": "am_fenrir",
+   "speed": 0.95,
+   "fx": "rubberband=pitch=1.35:formant=shifted:pitchq=quality",
+   "polish": true
+  },
+  "narrator": {
+   "voice": "af_heart",
+   "speed": 0.95
+  },
+  "duck": {
+   "voice": "af_bella",
+   "speed": 0.9,
+   "fx": "rubberband=pitch=1.6:formant=shifted:pitchq=quality"
+  }
+ },
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "sea turtle",
+  "funny kids"
+ ],
+ "phrases": [
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "Ooh! A mystery egg! What's inside?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "hold": 0.7
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.2,
+   "say": "I know! It's a cookie!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "hold": 0.3
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Aha! It's a red car!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "What do you think it is?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Three!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Two!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "One!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "It's a turtle!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "A turtle! I knew it!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "Baby sea turtles hatch in warm sand, then rush to the sea together!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "The moon shining on the water helps them find the way."
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.7,
+   "say": "See you next time!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "until": 1,
+   "els": [
+    {
+     "t": "act",
+     "at": -1,
+     "do": "intro"
+    },
+    {
+     "t": "egg",
+     "at": -1,
+     "inside": "turtle",
+     "cracks": [
+      {
+       "at": 1,
+       "delay": 0.0,
+       "peek": null,
+       "sound": "Tap!"
+      },
+      {
+       "at": 4,
+       "delay": 0.0,
+       "peek": null,
+       "sound": "Tap!"
+      }
+     ],
+     "rumble": {
+      "at": 8
+     },
+     "hatch": {
+      "at": 11,
+      "delay": -0.2
+     }
+    },
+    {
+     "t": "cap",
+     "at": -1,
+     "text": "What's inside|the egg?",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "crack",
+   "until": 2,
+   "els": [
+    {
+     "t": "act",
+     "at": 1,
+     "do": "surprise"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "name": "crack"
+    }
+   ]
+  },
+  {
+   "kind": "guess",
+   "until": 3,
+   "els": [
+    {
+     "t": "act",
+     "at": 2,
+     "do": "guess"
+    },
+    {
+     "t": "bubble",
+     "at": 2,
+     "icon": "cookie"
+    },
+    {
+     "t": "sfx",
+     "at": 2,
+     "delay": 0.5,
+     "name": "drop"
+    },
+    {
+     "t": "cap",
+     "at": 2,
+     "text": "A cookie?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 4,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 3
+    },
+    {
+     "t": "act",
+     "at": 3,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 3,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "crack",
+   "until": 5,
+   "els": [
+    {
+     "t": "act",
+     "at": 4,
+     "do": "surprise"
+    },
+    {
+     "t": "sfx",
+     "at": 4,
+     "name": "crack"
+    }
+   ]
+  },
+  {
+   "kind": "guess",
+   "until": 6,
+   "els": [
+    {
+     "t": "act",
+     "at": 5,
+     "do": "guess"
+    },
+    {
+     "t": "bubble",
+     "at": 5,
+     "icon": "car"
+    },
+    {
+     "t": "sfx",
+     "at": 5,
+     "delay": 0.5,
+     "name": "drop"
+    },
+    {
+     "t": "cap",
+     "at": 5,
+     "text": "A red car?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 7,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 6
+    },
+    {
+     "t": "act",
+     "at": 6,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 6,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "ask",
+   "until": 8,
+   "els": [
+    {
+     "t": "act",
+     "at": 7,
+     "do": "lean"
+    },
+    {
+     "t": "sfx",
+     "at": 7,
+     "delay": -0.1,
+     "name": "question"
+    },
+    {
+     "t": "cap",
+     "at": 7,
+     "text": "What do YOU think?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "countdown",
+   "until": 11,
+   "els": [
+    {
+     "t": "digit",
+     "at": 8,
+     "n": "3"
+    },
+    {
+     "t": "digit",
+     "at": 9,
+     "n": "2"
+    },
+    {
+     "t": "digit",
+     "at": 10,
+     "n": "1"
+    },
+    {
+     "t": "sfx",
+     "at": 8,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "sfx",
+     "at": 9,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "sfx",
+     "at": 10,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "act",
+     "at": 8,
+     "do": "lean",
+     "digits": [
+      {
+       "at": 8
+      },
+      {
+       "at": 9
+      },
+      {
+       "at": 10
+      }
+     ]
+    },
+    {
+     "t": "duckmusic",
+     "at": 8,
+     "delay": -0.3
+    }
+   ]
+  },
+  {
+   "kind": "hatch",
+   "until": 12,
+   "els": [
+    {
+     "t": "act",
+     "at": 11,
+     "delay": -0.2,
+     "do": "shock"
+    },
+    {
+     "t": "sfx",
+     "at": 11,
+     "delay": -0.2,
+     "name": "hatch"
+    },
+    {
+     "t": "cap",
+     "at": 11,
+     "text": "It's a TURTLE!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "cheer",
+   "until": 13,
+   "els": [
+    {
+     "t": "act",
+     "at": 12,
+     "do": "cheer"
+    },
+    {
+     "t": "cap",
+     "at": 12,
+     "text": "I knew it!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 14,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 13
+    },
+    {
+     "t": "act",
+     "at": 13,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 13,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 16,
+   "els": [
+    {
+     "t": "act",
+     "at": 14,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 14,
+     "icon": "moon",
+     "delay2": 0.3
+    },
+    {
+     "t": "cap",
+     "at": 14,
+     "text": "Rush to|the SEA!",
+     "big": true,
+     "to": 15
+    },
+    {
+     "t": "cap",
+     "at": 15,
+     "text": "Moon shows|the WAY!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ending",
+   "until": "end",
+   "els": [
+    {
+     "t": "end",
+     "at": 16,
+     "delay": -0.5,
+     "buddy": "turtle"
+    },
+    {
+     "t": "sfx",
+     "at": 16,
+     "delay": -0.5,
+     "name": "end"
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "title": "What's|inside?",
+  "icon": "egg"
+ },
+ "sources": [
+  {
+   "fact": "Sea turtle eggs incubate in the warm sand for about 60 days; hatchlings hatch together and rush to the sea, finding it by the downward slope of the beach and the reflections of the moon and stars on the water",
+   "url": "https://oceanservice.noaa.gov/facts/turtle-hatch.html",
+   "fetched": "2026-11-20"
+  }
+ ],
+ "math": [
+  {
+   "expr": "60",
+   "expect": "60",
+   "note": "sea turtle eggs incubate about 60 days (NOAA National Ocean Service)"
+  }
+ ],
+ "post": {
+  "slot": "morning",
+  "post_at": "2026-11-21T08:00:00+05:30",
+  "instagram_caption": "Wibbo found a mystery egg! Is it a cookie? A red car? No, Wibbo!\n\nIt's a baby sea turtle! Sea turtle eggs stay in the warm sand for about 60 days. Then the babies hatch together and rush to the sea, with the moon on the water showing the way.\n\nSilly Wibbo. Smart kids.\n\nWhat would YOU name a baby sea turtle?\n\n#wibbo #kidslearning #guessinggame #funnykids #seaturtle",
+  "youtube_title": "What's Inside the Mystery Egg? A Turtle? No, Wibbo!",
+  "youtube_description": "Wibbo finds a mystery egg and guesses a cookie, then a red car. Count down with us to find out what's really inside! Sea turtle eggs stay in the warm sand for about 60 days, then the babies rush to the sea together.\n\nSources:\n• NOAA National Ocean Service, \"How do sea turtles hatch?\" (fetched Nov 20, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #SeaTurtle #Shorts",
+  "made_for_kids": true
+ }
+}

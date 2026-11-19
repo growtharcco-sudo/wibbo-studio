@@ -1,0 +1,522 @@
+{
+ "id": "004_penguin_egg",
+ "style": "mystery",
+ "series": "Mystery Egg",
+ "voices": {
+  "wibbo": {
+   "voice": "am_fenrir",
+   "speed": 0.95,
+   "fx": "rubberband=pitch=1.35:formant=shifted:pitchq=quality",
+   "polish": true
+  },
+  "narrator": {
+   "voice": "af_heart",
+   "speed": 0.95
+  },
+  "duck": {
+   "voice": "af_bella",
+   "speed": 0.9,
+   "fx": "rubberband=pitch=1.6:formant=shifted:pitchq=quality"
+  }
+ },
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "penguin",
+  "funny kids"
+ ],
+ "phrases": [
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "Ooh! A mystery egg! What's inside?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "hold": 0.7
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.2,
+   "say": "I know! It's a banana!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "hold": 0.3
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Aha! It's a big book!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "What do you think it is?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Three!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Two!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "One!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "It's a penguin!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "A penguin! I knew it!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "Penguin dads keep the egg warm on their feet!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "For about two whole months!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.7,
+   "say": "See you next time!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "until": 1,
+   "els": [
+    {
+     "t": "act",
+     "at": -1,
+     "do": "intro"
+    },
+    {
+     "t": "egg",
+     "at": -1,
+     "inside": "penguin",
+     "cracks": [
+      {
+       "at": 1,
+       "delay": 0.0,
+       "peek": null,
+       "sound": "Peep!"
+      },
+      {
+       "at": 4,
+       "delay": 0.0,
+       "peek": null,
+       "sound": "Peep!"
+      }
+     ],
+     "rumble": {
+      "at": 8
+     },
+     "hatch": {
+      "at": 11,
+      "delay": -0.2
+     }
+    },
+    {
+     "t": "cap",
+     "at": -1,
+     "text": "What's inside|the egg?",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "crack",
+   "until": 2,
+   "els": [
+    {
+     "t": "act",
+     "at": 1,
+     "do": "surprise"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "name": "crack"
+    }
+   ]
+  },
+  {
+   "kind": "guess",
+   "until": 3,
+   "els": [
+    {
+     "t": "act",
+     "at": 2,
+     "do": "guess"
+    },
+    {
+     "t": "bubble",
+     "at": 2,
+     "icon": "banana"
+    },
+    {
+     "t": "sfx",
+     "at": 2,
+     "delay": 0.5,
+     "name": "drop"
+    },
+    {
+     "t": "cap",
+     "at": 2,
+     "text": "A banana?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 4,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 3
+    },
+    {
+     "t": "act",
+     "at": 3,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 3,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "crack",
+   "until": 5,
+   "els": [
+    {
+     "t": "act",
+     "at": 4,
+     "do": "surprise"
+    },
+    {
+     "t": "sfx",
+     "at": 4,
+     "name": "crack"
+    }
+   ]
+  },
+  {
+   "kind": "guess",
+   "until": 6,
+   "els": [
+    {
+     "t": "act",
+     "at": 5,
+     "do": "guess"
+    },
+    {
+     "t": "bubble",
+     "at": 5,
+     "icon": "book"
+    },
+    {
+     "t": "sfx",
+     "at": 5,
+     "delay": 0.5,
+     "name": "drop"
+    },
+    {
+     "t": "cap",
+     "at": 5,
+     "text": "A big book?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 7,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 6
+    },
+    {
+     "t": "act",
+     "at": 6,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 6,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "ask",
+   "until": 8,
+   "els": [
+    {
+     "t": "act",
+     "at": 7,
+     "do": "lean"
+    },
+    {
+     "t": "sfx",
+     "at": 7,
+     "delay": -0.1,
+     "name": "question"
+    },
+    {
+     "t": "cap",
+     "at": 7,
+     "text": "What do YOU think?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "countdown",
+   "until": 11,
+   "els": [
+    {
+     "t": "digit",
+     "at": 8,
+     "n": "3"
+    },
+    {
+     "t": "digit",
+     "at": 9,
+     "n": "2"
+    },
+    {
+     "t": "digit",
+     "at": 10,
+     "n": "1"
+    },
+    {
+     "t": "sfx",
+     "at": 8,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "sfx",
+     "at": 9,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "sfx",
+     "at": 10,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "act",
+     "at": 8,
+     "do": "lean",
+     "digits": [
+      {
+       "at": 8
+      },
+      {
+       "at": 9
+      },
+      {
+       "at": 10
+      }
+     ]
+    },
+    {
+     "t": "duckmusic",
+     "at": 8,
+     "delay": -0.3
+    }
+   ]
+  },
+  {
+   "kind": "hatch",
+   "until": 12,
+   "els": [
+    {
+     "t": "act",
+     "at": 11,
+     "delay": -0.2,
+     "do": "shock"
+    },
+    {
+     "t": "sfx",
+     "at": 11,
+     "delay": -0.2,
+     "name": "hatch"
+    },
+    {
+     "t": "cap",
+     "at": 11,
+     "text": "It's a PENGUIN!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "cheer",
+   "until": 13,
+   "els": [
+    {
+     "t": "act",
+     "at": 12,
+     "do": "cheer"
+    },
+    {
+     "t": "cap",
+     "at": 12,
+     "text": "I knew it!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 14,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 13
+    },
+    {
+     "t": "act",
+     "at": 13,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 13,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 16,
+   "els": [
+    {
+     "t": "act",
+     "at": 14,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 14,
+     "icon": "egg",
+     "delay2": 0.3
+    },
+    {
+     "t": "cap",
+     "at": 14,
+     "text": "Dad keeps it|WARM!",
+     "big": true,
+     "to": 15
+    },
+    {
+     "t": "cap",
+     "at": 15,
+     "text": "About 2|months!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ending",
+   "until": "end",
+   "els": [
+    {
+     "t": "end",
+     "at": 16,
+     "delay": -0.5,
+     "buddy": "penguin"
+    },
+    {
+     "t": "sfx",
+     "at": 16,
+     "delay": -0.5,
+     "name": "end"
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "title": "What's|inside?",
+  "icon": "egg"
+ },
+ "sources": [
+  {
+   "fact": "The female emperor penguin lays one egg and leaves; the father balances it on his feet under his warm brood pouch for about 65 days, about two months, until the females return from the sea",
+   "url": "https://kids.nationalgeographic.com/animals/birds/facts/emperor-penguin",
+   "fetched": "2026-11-20"
+  }
+ ],
+ "math": [
+  {
+   "expr": "65",
+   "expect": "65",
+   "note": "days the emperor penguin father keeps the egg on his feet (National Geographic Kids)"
+  },
+  {
+   "expr": "round(65/30.4)",
+   "expect": "2",
+   "note": "65 days is about 2 months (National Geographic Kids says after about two months)"
+  }
+ ],
+ "post": {
+  "slot": "morning",
+  "post_at": "2026-11-20T08:00:00+05:30",
+  "instagram_caption": "Wibbo found a mystery egg! Is it a banana? A big book? No, Wibbo!\n\nIt's a penguin! Emperor penguin dads keep the egg warm on their feet, under a cozy flap of feathery skin, for about 2 months.\n\nSilly Wibbo. Smart kids.\n\nCould YOU stand still for 2 whole months?\n\n#wibbo #kidslearning #guessinggame #funnykids #penguin",
+  "youtube_title": "What's Inside the Mystery Egg? A Penguin? No, Wibbo!",
+  "youtube_description": "Wibbo finds a mystery egg and guesses a banana, then a big book. Count down with us to find out what's really inside! Emperor penguin dads keep the egg warm on their feet for about 2 months.\n\nSources:\n• National Geographic Kids, \"Emperor Penguin\" (fetched Nov 20, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #Penguin #Shorts",
+  "made_for_kids": true
+ }
+}

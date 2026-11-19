@@ -1,0 +1,132 @@
+{
+ "id": "005_drinking_water",
+ "style": "tries",
+ "series": "Wibbo Tries",
+ "keywords": [
+  "drinking water",
+  "healthy drinks",
+  "healthy habits",
+  "funny kids"
+ ],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "I'm thirsty! Time for a drink!",
+   "cap": "Time for|a drink!",
+   "show": {
+    "kind": "hook",
+    "hold": "cup"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I'll pour it on my antenna!",
+   "cap": "On my antenna?",
+   "pause": 0.3,
+   "show": {
+    "kind": "wrong",
+    "how": "antenna"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "speed": 0.9,
+   "pause": 1.0,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Quack!",
+   "pause": 0.1
+  },
+  {
+   "say": "Water goes in your mouth, not on your antenna!",
+   "cap": "In your MOUTH!",
+   "pause": 0.1
+  },
+  {
+   "by": "wibbo",
+   "say": "Okay! I'll drink it upside down!",
+   "cap": "Upside down?",
+   "pause": 0.5,
+   "show": {
+    "kind": "wrong",
+    "how": "upside"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "speed": 0.9,
+   "pause": 0.6,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "say": "Hold your cup the right way up, and take a sip.",
+   "cap": "Right way UP!",
+   "pause": 0.4,
+   "show": {
+    "kind": "lesson",
+    "icon": "cup"
+   }
+  },
+  {
+   "say": "Water and milk are the best drinks!",
+   "cap": "Water and|MILK!",
+   "pause": 0.3
+  },
+  {
+   "by": "wibbo",
+   "say": "Gulp! Yummy water!",
+   "cap": "Yummy water!",
+   "pause": 0.5,
+   "show": {
+    "kind": "cheer"
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Quack quack!",
+   "pause": 0.2
+  },
+  {
+   "say": "Did you drink some water today?",
+   "cap": "Did YOU drink|water today?",
+   "pause": 0.2,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  }
+ ],
+ "cover": {
+  "title": "Wibbo drinks|water?",
+  "icon": "cup"
+ },
+ "sources": [
+  {
+   "fact": "The best drinks to give children are water and milk; water is a healthy and cheap choice to keep you hydrated",
+   "url": "https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/water-drinks-nutrition/",
+   "fetched": "2026-11-20"
+  }
+ ],
+ "post": {
+  "slot": "evening",
+  "post_at": "2026-11-20T18:30:00+05:30",
+  "instagram_caption": "Wibbo is thirsty... so he poured water on his antenna! Then he tried to drink upside down.\n\nThe right way: hold your cup the right way up and take a sip. Water and milk are the best drinks for kids.\n\nSilly Wibbo. Smart kids.\n\nWhat is your favorite cup to drink water from?\n\n#wibbo #kidslearning #drinkwater #healthyhabits #funnykids",
+  "youtube_title": "Wibbo Pours Water on His Antenna?! No, Wibbo!",
+  "youtube_description": "Wibbo is thirsty and gets drinking all wrong. Learn the right way: hold your cup the right way up and take a sip. Water and milk are the best drinks for kids.\n\nSources:\n• NHS, \"Water, drinks and hydration\" (fetched Nov 20, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #DrinkWater #Shorts",
+  "made_for_kids": true
+ },
+ "math": []
+}

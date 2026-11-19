@@ -1,0 +1,324 @@
+{
+ "id": "005_drinking_water",
+ "style": "tries",
+ "series": "Wibbo Tries",
+ "voices": {
+  "wibbo": {
+   "voice": "am_fenrir",
+   "speed": 0.95,
+   "fx": "rubberband=pitch=1.35:formant=shifted:pitchq=quality",
+   "polish": true
+  },
+  "narrator": {
+   "voice": "af_heart",
+   "speed": 0.95
+  },
+  "duck": {
+   "voice": "af_bella",
+   "speed": 0.9,
+   "fx": "rubberband=pitch=1.6:formant=shifted:pitchq=quality"
+  }
+ },
+ "keywords": [
+  "drinking water",
+  "healthy drinks",
+  "healthy habits",
+  "funny kids"
+ ],
+ "phrases": [
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "I'm thirsty! Time for a drink!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "I'll pour it on my antenna!"
+  },
+  {
+   "by": "narrator",
+   "pause": 1.0,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "duck",
+   "pause": 0.1,
+   "say": "Quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.1,
+   "say": "Water goes in your mouth, not on your antenna!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Okay! I'll drink it upside down!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "Hold your cup the right way up, and take a sip."
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "Water and milk are the best drinks!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Gulp! Yummy water!"
+  },
+  {
+   "by": "duck",
+   "pause": 0.2,
+   "say": "Quack quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.2,
+   "say": "Did you drink some water today?"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.7,
+   "say": "See you next time!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "until": 1,
+   "els": [
+    {
+     "t": "act",
+     "at": -1,
+     "do": "intro",
+     "hold": "cup"
+    },
+    {
+     "t": "cap",
+     "at": -1,
+     "text": "Time for|a drink!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "wrong",
+   "until": 2,
+   "els": [
+    {
+     "t": "act",
+     "at": 1,
+     "do": "antenna"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "name": "wrong_antenna"
+    },
+    {
+     "t": "cap",
+     "at": 1,
+     "text": "On my antenna?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 5,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 2
+    },
+    {
+     "t": "act",
+     "at": 2,
+     "do": "no",
+     "recover": {
+      "at": 4
+     }
+    },
+    {
+     "t": "sfx",
+     "at": 2,
+     "name": "no"
+    },
+    {
+     "t": "cap",
+     "at": 4,
+     "text": "In your MOUTH!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "wrong",
+   "until": 6,
+   "els": [
+    {
+     "t": "act",
+     "at": 5,
+     "do": "upside"
+    },
+    {
+     "t": "sfx",
+     "at": 5,
+     "name": "wrong_upside"
+    },
+    {
+     "t": "cap",
+     "at": 5,
+     "text": "Upside down?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 7,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 6
+    },
+    {
+     "t": "act",
+     "at": 6,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 6,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 9,
+   "els": [
+    {
+     "t": "act",
+     "at": 7,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 7,
+     "icon": "cup",
+     "delay2": 0.3
+    },
+    {
+     "t": "cap",
+     "at": 7,
+     "text": "Right way UP!",
+     "big": true,
+     "to": 8
+    },
+    {
+     "t": "cap",
+     "at": 8,
+     "text": "Water and|MILK!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "cheer",
+   "until": 11,
+   "els": [
+    {
+     "t": "act",
+     "at": 9,
+     "do": "cheer"
+    },
+    {
+     "t": "cap",
+     "at": 9,
+     "text": "Yummy water!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ask",
+   "until": 12,
+   "els": [
+    {
+     "t": "act",
+     "at": 11,
+     "do": "smile"
+    },
+    {
+     "t": "sfx",
+     "at": 11,
+     "delay": -0.1,
+     "name": "question"
+    },
+    {
+     "t": "cap",
+     "at": 11,
+     "text": "Did YOU drink|water today?",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ending",
+   "until": "end",
+   "els": [
+    {
+     "t": "end",
+     "at": 12,
+     "delay": -0.5
+    },
+    {
+     "t": "sfx",
+     "at": 12,
+     "delay": -0.5,
+     "name": "end"
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "title": "Wibbo drinks|water?",
+  "icon": "cup"
+ },
+ "sources": [
+  {
+   "fact": "The best drinks to give children are water and milk; water is a healthy and cheap choice to keep you hydrated",
+   "url": "https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/water-drinks-nutrition/",
+   "fetched": "2026-11-20"
+  }
+ ],
+ "math": [],
+ "post": {
+  "slot": "evening",
+  "post_at": "2026-11-20T18:30:00+05:30",
+  "instagram_caption": "Wibbo is thirsty... so he poured water on his antenna! Then he tried to drink upside down.\n\nThe right way: hold your cup the right way up and take a sip. Water and milk are the best drinks for kids.\n\nSilly Wibbo. Smart kids.\n\nWhat is your favorite cup to drink water from?\n\n#wibbo #kidslearning #drinkwater #healthyhabits #funnykids",
+  "youtube_title": "Wibbo Pours Water on His Antenna?! No, Wibbo!",
+  "youtube_description": "Wibbo is thirsty and gets drinking all wrong. Learn the right way: hold your cup the right way up and take a sip. Water and milk are the best drinks for kids.\n\nSources:\n• NHS, \"Water, drinks and hydration\" (fetched Nov 20, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #DrinkWater #Shorts",
+  "made_for_kids": true
+ }
+}
