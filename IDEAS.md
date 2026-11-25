@@ -11,6 +11,7 @@ New icons needed are noted; add them once to `ICONS` (props.js and kit.py).
 - [ ] Bath time: puts socks on before the bath (sock); clothes off, then bath
 - [ ] Combing hair: combs his antenna with a fork (needs a comb icon)
 - [x] Bedtime: book upside down, book hat; Brush, Book, Bed, AAP (007_brush_book_bed)
+- [x] Snack time: banana on his antenna, eats the peel; peel first, bananas grow in hands, one is a finger, Britannica (011_banana_hands)
 - [ ] Getting dressed: sock on his antenna (sock); socks go on feet, then shoes (shoe)
 
 ## mystery (sky, egg): Wibbo guesses wrong, countdown, reveal

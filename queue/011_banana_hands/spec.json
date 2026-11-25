@@ -1,0 +1,343 @@
+{
+ "id": "011_banana_hands",
+ "style": "tries",
+ "series": "Wibbo Tries",
+ "voices": {
+  "wibbo": {
+   "voice": "am_fenrir",
+   "speed": 0.95,
+   "fx": "rubberband=pitch=1.35:formant=shifted:pitchq=quality",
+   "polish": true
+  },
+  "narrator": {
+   "voice": "af_heart",
+   "speed": 0.95
+  },
+  "duck": {
+   "voice": "af_bella",
+   "speed": 0.9,
+   "fx": "rubberband=pitch=1.6:formant=shifted:pitchq=quality"
+  }
+ },
+ "keywords": [
+  "banana",
+  "fruit",
+  "snack time",
+  "funny kids"
+ ],
+ "phrases": [
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "Snack time! A yummy banana!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "I'll put it on my antenna!"
+  },
+  {
+   "by": "narrator",
+   "pause": 1.0,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "duck",
+   "pause": 0.1,
+   "say": "Quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.1,
+   "say": "Bananas are for eating, not for your antenna!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Okay! I'll eat the peel too!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "Peel it first, then eat the inside."
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Did you know? Bananas grow in bunches called hands!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "And one banana is called a finger!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.6,
+   "say": "Yummy! Banana fingers!"
+  },
+  {
+   "by": "duck",
+   "pause": 0.2,
+   "say": "Quack quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.2,
+   "say": "What fruit do you like best?"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.7,
+   "say": "See you next time!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "until": 1,
+   "els": [
+    {
+     "t": "act",
+     "at": -1,
+     "do": "intro",
+     "hold": "banana"
+    },
+    {
+     "t": "cap",
+     "at": -1,
+     "text": "Snack time!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "wrong",
+   "until": 2,
+   "els": [
+    {
+     "t": "act",
+     "at": 1,
+     "do": "antenna"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "name": "wrong_antenna"
+    },
+    {
+     "t": "cap",
+     "at": 1,
+     "text": "On my antenna?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 5,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 2
+    },
+    {
+     "t": "act",
+     "at": 2,
+     "do": "no",
+     "recover": {
+      "at": 4
+     }
+    },
+    {
+     "t": "sfx",
+     "at": 2,
+     "name": "no"
+    },
+    {
+     "t": "cap",
+     "at": 4,
+     "text": "Bananas are|for EATING!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "wrong",
+   "until": 6,
+   "els": [
+    {
+     "t": "act",
+     "at": 5,
+     "do": "upside"
+    },
+    {
+     "t": "sfx",
+     "at": 5,
+     "name": "wrong_upside"
+    },
+    {
+     "t": "cap",
+     "at": 5,
+     "text": "Eat the PEEL?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 7,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 6
+    },
+    {
+     "t": "act",
+     "at": 6,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 6,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 10,
+   "els": [
+    {
+     "t": "act",
+     "at": 7,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 7,
+     "icon": "banana",
+     "delay2": 0.3
+    },
+    {
+     "t": "cap",
+     "at": 7,
+     "text": "PEEL it first!",
+     "big": true,
+     "to": 8
+    },
+    {
+     "t": "cap",
+     "at": 8,
+     "text": "Banana|HANDS!",
+     "big": true,
+     "to": 9
+    },
+    {
+     "t": "cap",
+     "at": 9,
+     "text": "One banana is|a FINGER!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "cheer",
+   "until": 12,
+   "els": [
+    {
+     "t": "act",
+     "at": 10,
+     "do": "cheer",
+     "sparkle": true
+    },
+    {
+     "t": "sfx",
+     "at": 10,
+     "delay": -0.15,
+     "name": "sparkle"
+    },
+    {
+     "t": "cap",
+     "at": 10,
+     "text": "Banana|FINGERS!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ask",
+   "until": 13,
+   "els": [
+    {
+     "t": "act",
+     "at": 12,
+     "do": "smile"
+    },
+    {
+     "t": "sfx",
+     "at": 12,
+     "delay": -0.1,
+     "name": "question"
+    },
+    {
+     "t": "cap",
+     "at": 12,
+     "text": "Your favorite|FRUIT?",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ending",
+   "until": "end",
+   "els": [
+    {
+     "t": "end",
+     "at": 13,
+     "delay": -0.5
+    },
+    {
+     "t": "sfx",
+     "at": 13,
+     "delay": -0.5,
+     "name": "end"
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "title": "Wibbo eats|a banana?",
+  "icon": "banana"
+ },
+ "sources": [
+  {
+   "fact": "Individual bananas are called fingers, and they grow grouped in clusters called hands",
+   "url": "https://www.britannica.com/plant/banana-plant",
+   "fetched": "2026-11-26"
+  }
+ ],
+ "math": [],
+ "post": {
+  "slot": "evening",
+  "post_at": "2026-11-27T18:30:00+05:30",
+  "instagram_caption": "Snack time! Wibbo put his banana on his antenna, then tried to eat the peel. No, Wibbo!\n\nPeel it first, then eat the inside. Fun fact: bananas grow in bunches called hands, and one banana is called a finger!\n\nSilly Wibbo. Smart kids.\n\nWhat fruit do YOU like best?\n\n#wibbo #kidslearning #banana #fruit #funnykids",
+  "youtube_title": "Wibbo Eats the Banana Peel?! No, Wibbo!",
+  "youtube_description": "It's snack time and Wibbo gets his banana all wrong. Peel it first, then eat the inside! Fun fact: bananas grow in bunches called hands, and one banana is called a finger.\n\nSources:\n• Encyclopaedia Britannica, \"Banana\" (fetched Nov 26, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #Banana #Shorts",
+  "made_for_kids": true
+ }
+}

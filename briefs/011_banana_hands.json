@@ -1,0 +1,138 @@
+{
+ "id": "011_banana_hands",
+ "style": "tries",
+ "series": "Wibbo Tries",
+ "keywords": [
+  "banana",
+  "fruit",
+  "snack time",
+  "funny kids"
+ ],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "Snack time! A yummy banana!",
+   "cap": "Snack time!",
+   "show": {
+    "kind": "hook",
+    "hold": "banana"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I'll put it on my antenna!",
+   "cap": "On my antenna?",
+   "pause": 0.3,
+   "show": {
+    "kind": "wrong",
+    "how": "antenna"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 1.0,
+   "show": {
+    "kind": "no"
+   },
+   "speed": 0.9
+  },
+  {
+   "by": "duck",
+   "say": "Quack!",
+   "pause": 0.1
+  },
+  {
+   "say": "Bananas are for eating, not for your antenna!",
+   "cap": "Bananas are|for EATING!",
+   "pause": 0.1
+  },
+  {
+   "by": "wibbo",
+   "say": "Okay! I'll eat the peel too!",
+   "cap": "Eat the PEEL?",
+   "pause": 0.5,
+   "show": {
+    "kind": "wrong",
+    "how": "upside"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.6,
+   "show": {
+    "kind": "no"
+   },
+   "speed": 0.9
+  },
+  {
+   "say": "Peel it first, then eat the inside.",
+   "cap": "PEEL it first!",
+   "pause": 0.4,
+   "show": {
+    "kind": "lesson",
+    "icon": "banana"
+   }
+  },
+  {
+   "say": "Did you know? Bananas grow in bunches called hands!",
+   "cap": "Banana|HANDS!",
+   "pause": 0.5
+  },
+  {
+   "say": "And one banana is called a finger!",
+   "cap": "One banana is|a FINGER!",
+   "pause": 0.4
+  },
+  {
+   "by": "wibbo",
+   "say": "Yummy! Banana fingers!",
+   "cap": "Banana|FINGERS!",
+   "pause": 0.6,
+   "show": {
+    "kind": "cheer",
+    "sparkle": true
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Quack quack!",
+   "pause": 0.2
+  },
+  {
+   "say": "What fruit do you like best?",
+   "cap": "Your favorite|FRUIT?",
+   "pause": 0.2,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  }
+ ],
+ "cover": {
+  "title": "Wibbo eats|a banana?",
+  "icon": "banana"
+ },
+ "sources": [
+  {
+   "fact": "Individual bananas are called fingers, and they grow grouped in clusters called hands",
+   "url": "https://www.britannica.com/plant/banana-plant",
+   "fetched": "2026-11-26"
+  }
+ ],
+ "post": {
+  "slot": "evening",
+  "post_at": "2026-11-27T18:30:00+05:30",
+  "instagram_caption": "Snack time! Wibbo put his banana on his antenna, then tried to eat the peel. No, Wibbo!\n\nPeel it first, then eat the inside. Fun fact: bananas grow in bunches called hands, and one banana is called a finger!\n\nSilly Wibbo. Smart kids.\n\nWhat fruit do YOU like best?\n\n#wibbo #kidslearning #banana #fruit #funnykids",
+  "youtube_title": "Wibbo Eats the Banana Peel?! No, Wibbo!",
+  "youtube_description": "It's snack time and Wibbo gets his banana all wrong. Peel it first, then eat the inside! Fun fact: bananas grow in bunches called hands, and one banana is called a finger.\n\nSources:\n\u2022 Encyclopaedia Britannica, \"Banana\" (fetched Nov 26, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #Banana #Shorts",
+  "made_for_kids": true
+ },
+ "math": []
+}
