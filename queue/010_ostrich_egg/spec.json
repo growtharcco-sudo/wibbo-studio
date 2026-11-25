@@ -1,0 +1,522 @@
+{
+ "id": "010_ostrich_egg",
+ "style": "mystery",
+ "series": "Mystery Egg",
+ "voices": {
+  "wibbo": {
+   "voice": "am_fenrir",
+   "speed": 0.95,
+   "fx": "rubberband=pitch=1.35:formant=shifted:pitchq=quality",
+   "polish": true
+  },
+  "narrator": {
+   "voice": "af_heart",
+   "speed": 0.95
+  },
+  "duck": {
+   "voice": "af_bella",
+   "speed": 0.9,
+   "fx": "rubberband=pitch=1.6:formant=shifted:pitchq=quality"
+  }
+ },
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "ostrich",
+  "funny kids"
+ ],
+ "phrases": [
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "Whoa! A giant mystery egg! What's inside?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "hold": 0.7
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.2,
+   "say": "I know! It's a ball!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "hold": 0.3
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Aha! It's a big red apple!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "What do you think it is?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Three!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Two!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "One!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "It's an ostrich!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "An ostrich! I knew it!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "Ostrich eggs are the biggest eggs in the world today!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "One weighs as much as about twenty four chicken eggs!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.7,
+   "say": "See you next time!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "until": 1,
+   "els": [
+    {
+     "t": "act",
+     "at": -1,
+     "do": "intro"
+    },
+    {
+     "t": "egg",
+     "at": -1,
+     "inside": "ostrich",
+     "cracks": [
+      {
+       "at": 1,
+       "delay": 0.0,
+       "peek": null,
+       "sound": "Tap!"
+      },
+      {
+       "at": 4,
+       "delay": 0.0,
+       "peek": null,
+       "sound": "Tap!"
+      }
+     ],
+     "rumble": {
+      "at": 8
+     },
+     "hatch": {
+      "at": 11,
+      "delay": -0.2
+     },
+     "jump": {
+      "at": 13,
+      "delay": 0.1
+     }
+    },
+    {
+     "t": "cap",
+     "at": -1,
+     "text": "What's inside|the BIG egg?",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "crack",
+   "until": 2,
+   "els": [
+    {
+     "t": "act",
+     "at": 1,
+     "do": "surprise"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "name": "crack"
+    }
+   ]
+  },
+  {
+   "kind": "guess",
+   "until": 3,
+   "els": [
+    {
+     "t": "act",
+     "at": 2,
+     "do": "guess"
+    },
+    {
+     "t": "bubble",
+     "at": 2,
+     "icon": "ball"
+    },
+    {
+     "t": "sfx",
+     "at": 2,
+     "delay": 0.5,
+     "name": "drop"
+    },
+    {
+     "t": "cap",
+     "at": 2,
+     "text": "A ball?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 4,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 3
+    },
+    {
+     "t": "act",
+     "at": 3,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 3,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "crack",
+   "until": 5,
+   "els": [
+    {
+     "t": "act",
+     "at": 4,
+     "do": "surprise"
+    },
+    {
+     "t": "sfx",
+     "at": 4,
+     "name": "crack"
+    }
+   ]
+  },
+  {
+   "kind": "guess",
+   "until": 6,
+   "els": [
+    {
+     "t": "act",
+     "at": 5,
+     "do": "guess"
+    },
+    {
+     "t": "bubble",
+     "at": 5,
+     "icon": "apple"
+    },
+    {
+     "t": "sfx",
+     "at": 5,
+     "delay": 0.5,
+     "name": "drop"
+    },
+    {
+     "t": "cap",
+     "at": 5,
+     "text": "A big|red apple?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 7,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 6
+    },
+    {
+     "t": "act",
+     "at": 6,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 6,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "ask",
+   "until": 8,
+   "els": [
+    {
+     "t": "act",
+     "at": 7,
+     "do": "lean"
+    },
+    {
+     "t": "sfx",
+     "at": 7,
+     "delay": -0.1,
+     "name": "question"
+    },
+    {
+     "t": "cap",
+     "at": 7,
+     "text": "What do YOU think?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "countdown",
+   "until": 11,
+   "els": [
+    {
+     "t": "digit",
+     "at": 8,
+     "n": "3"
+    },
+    {
+     "t": "digit",
+     "at": 9,
+     "n": "2"
+    },
+    {
+     "t": "digit",
+     "at": 10,
+     "n": "1"
+    },
+    {
+     "t": "sfx",
+     "at": 8,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "sfx",
+     "at": 9,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "sfx",
+     "at": 10,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "act",
+     "at": 8,
+     "do": "lean",
+     "digits": [
+      {
+       "at": 8
+      },
+      {
+       "at": 9
+      },
+      {
+       "at": 10
+      }
+     ]
+    },
+    {
+     "t": "duckmusic",
+     "at": 8,
+     "delay": -0.3
+    }
+   ]
+  },
+  {
+   "kind": "hatch",
+   "until": 12,
+   "els": [
+    {
+     "t": "act",
+     "at": 11,
+     "delay": -0.2,
+     "do": "shock"
+    },
+    {
+     "t": "sfx",
+     "at": 11,
+     "delay": -0.2,
+     "name": "hatch"
+    },
+    {
+     "t": "cap",
+     "at": 11,
+     "text": "It's an|OSTRICH!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "cheer",
+   "until": 13,
+   "els": [
+    {
+     "t": "act",
+     "at": 12,
+     "do": "cheer"
+    },
+    {
+     "t": "cap",
+     "at": 12,
+     "text": "I knew it!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 14,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 13
+    },
+    {
+     "t": "act",
+     "at": 13,
+     "do": "no",
+     "head": true
+    },
+    {
+     "t": "sfx",
+     "at": 13,
+     "name": "no_head"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 16,
+   "els": [
+    {
+     "t": "act",
+     "at": 14,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 14,
+     "icon": "egg",
+     "delay2": 0.3
+    },
+    {
+     "t": "cap",
+     "at": 14,
+     "text": "The BIGGEST|eggs!",
+     "big": true,
+     "to": 15
+    },
+    {
+     "t": "cap",
+     "at": 15,
+     "text": "Like 24|chicken eggs!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ending",
+   "until": "end",
+   "els": [
+    {
+     "t": "end",
+     "at": 16,
+     "delay": -0.5,
+     "buddy": "ostrich"
+    },
+    {
+     "t": "sfx",
+     "at": 16,
+     "delay": -0.5,
+     "name": "end"
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "title": "What's in the|BIG egg?",
+  "icon": "egg"
+ },
+ "sources": [
+  {
+   "fact": "The ostrich egg is the largest egg found on our planet today; one ostrich egg weighs about as much as 24 chicken eggs",
+   "url": "https://animals.sandiegozoo.org/animals/ostrich",
+   "fetched": "2026-11-26"
+  }
+ ],
+ "math": [
+  {
+   "expr": "24",
+   "expect": "24",
+   "note": "one ostrich egg weighs about as much as 24 chicken eggs (San Diego Zoo Wildlife Alliance)"
+  }
+ ],
+ "post": {
+  "slot": "morning",
+  "post_at": "2026-11-27T08:00:00+05:30",
+  "instagram_caption": "Wibbo found a GIANT mystery egg! Is it a ball? A big red apple? No, Wibbo!\n\nIt's an ostrich! Ostrich eggs are the biggest eggs in the world today. One weighs about as much as 24 chicken eggs.\n\nSilly Wibbo. Smart kids.\n\nWhat did YOU think was inside the big egg?\n\n#wibbo #kidslearning #guessinggame #ostrich #funnykids",
+  "youtube_title": "What's Inside the Giant Egg? No, Wibbo!",
+  "youtube_description": "Wibbo finds a giant mystery egg and guesses a ball, then a big red apple. Count down with us to see what really hatches! Ostrich eggs are the biggest eggs in the world today, and one weighs about as much as 24 chicken eggs.\n\nSources:\n• San Diego Zoo Wildlife Alliance, \"Ostrich\" (fetched Nov 26, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #MysteryEgg #Shorts",
+  "made_for_kids": true
+ }
+}

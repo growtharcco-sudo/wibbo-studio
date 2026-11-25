@@ -20,4 +20,4 @@ New icons needed are noted; add them once to `ICONS` (props.js and kit.py).
 - [x] Penguin egg: banana? book? a penguin! Dads keep the egg warm on their feet about 2 months, Nat Geo Kids (004_penguin_egg)
 - [x] Chick egg: guesses a shoe and a cake; a chick hatches in about 21 days (needs a chick icon) (008_chick_egg)
 - [ ] Crocodile egg: guesses a flower and a tree; baby crocodiles call from inside the egg (needs a crocodile icon)
-- [ ] Ostrich egg: guesses a ball; the biggest egg of any living bird (needs an ostrich icon)
+- [x] Ostrich egg: guesses a ball; the biggest egg of any living bird (needs an ostrich icon) (010_ostrich_egg)

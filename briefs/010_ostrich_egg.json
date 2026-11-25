@@ -1,0 +1,172 @@
+{
+ "id": "010_ostrich_egg",
+ "style": "mystery",
+ "series": "Mystery Egg",
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "ostrich",
+  "funny kids"
+ ],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "Whoa! A giant mystery egg! What's inside?",
+   "cap": "What's inside|the BIG egg?",
+   "show": {
+    "kind": "hook",
+    "inside": "ostrich"
+   }
+  },
+  {
+   "hold": 0.7,
+   "pause": 0.3,
+   "show": {
+    "kind": "crack",
+    "sound": "Tap!"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I know! It's a ball!",
+   "cap": "A ball?",
+   "pause": 0.2,
+   "show": {
+    "kind": "guess",
+    "icon": "ball"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "hold": 0.3,
+   "pause": 0.6,
+   "show": {
+    "kind": "crack",
+    "sound": "Tap!"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "Aha! It's a big red apple!",
+   "cap": "A big|red apple?",
+   "pause": 0.5,
+   "show": {
+    "kind": "guess",
+    "icon": "apple"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "say": "What do you think it is?",
+   "cap": "What do YOU think?",
+   "pause": 0.5,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "say": "Three!",
+   "pause": 0.5,
+   "show": {
+    "kind": "countdown"
+   },
+   "speed": 1.0
+  },
+  {
+   "say": "Two!",
+   "pause": 0.5,
+   "speed": 1.0
+  },
+  {
+   "say": "One!",
+   "pause": 0.5,
+   "speed": 1.0
+  },
+  {
+   "say": "It's an ostrich!",
+   "cap": "It's an|OSTRICH!",
+   "pause": 0.6,
+   "show": {
+    "kind": "hatch"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "An ostrich! I knew it!",
+   "cap": "I knew it!",
+   "pause": 0.3,
+   "show": {
+    "kind": "cheer"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no",
+    "head": true
+   },
+   "speed": 0.9
+  },
+  {
+   "say": "Ostrich eggs are the biggest eggs in the world today!",
+   "cap": "The BIGGEST|eggs!",
+   "pause": 0.3,
+   "show": {
+    "kind": "lesson",
+    "icon": "egg"
+   }
+  },
+  {
+   "say": "One weighs as much as about twenty four chicken eggs!",
+   "cap": "Like 24|chicken eggs!",
+   "pause": 0.3
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  }
+ ],
+ "cover": {
+  "title": "What's in the|BIG egg?",
+  "icon": "egg"
+ },
+ "sources": [
+  {
+   "fact": "The ostrich egg is the largest egg found on our planet today; one ostrich egg weighs about as much as 24 chicken eggs",
+   "url": "https://animals.sandiegozoo.org/animals/ostrich",
+   "fetched": "2026-11-26"
+  }
+ ],
+ "post": {
+  "slot": "morning",
+  "post_at": "2026-11-27T08:00:00+05:30",
+  "instagram_caption": "Wibbo found a GIANT mystery egg! Is it a ball? A big red apple? No, Wibbo!\n\nIt's an ostrich! Ostrich eggs are the biggest eggs in the world today. One weighs about as much as 24 chicken eggs.\n\nSilly Wibbo. Smart kids.\n\nWhat did YOU think was inside the big egg?\n\n#wibbo #kidslearning #guessinggame #ostrich #funnykids",
+  "youtube_title": "What's Inside the Giant Egg? No, Wibbo!",
+  "youtube_description": "Wibbo finds a giant mystery egg and guesses a ball, then a big red apple. Count down with us to see what really hatches! Ostrich eggs are the biggest eggs in the world today, and one weighs about as much as 24 chicken eggs.\n\nSources:\n\u2022 San Diego Zoo Wildlife Alliance, \"Ostrich\" (fetched Nov 26, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #MysteryEgg #Shorts",
+  "made_for_kids": true
+ },
+ "math": [
+  {
+   "expr": "24",
+   "expect": "24",
+   "note": "one ostrich egg weighs about as much as 24 chicken eggs (San Diego Zoo Wildlife Alliance)"
+  }
+ ]
+}
