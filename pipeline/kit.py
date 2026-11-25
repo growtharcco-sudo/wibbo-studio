@@ -45,7 +45,7 @@ STYLES = {  # must match pipeline/engine/sets.js
     "tries": {"capY": 260, "capBig": 118, "stampY": 470, "digitY": 470, "bubble": [330, 700]},
 }
 ICONS = ["carrot", "bus", "duck", "pea", "egg", "toothbrush", "toothpaste", "apple", "banana", "ball", "sun", "moon",
-         "star", "heart", "fish", "cookie", "cup", "soap", "sock", "shoe", "book", "car", "tree", "flower", "cake", "timer", "penguin", "turtle"]
+         "star", "heart", "fish", "cookie", "cup", "soap", "sock", "shoe", "book", "car", "tree", "flower", "cake", "timer", "penguin", "turtle", "chick", "ostrich", "tissue"]
 BIG_KINDS = {"hook", "lesson", "hatch", "ending"}
 
 

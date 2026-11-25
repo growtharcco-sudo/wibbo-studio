@@ -18,6 +18,6 @@ New icons needed are noted; add them once to `ICONS` (props.js and kit.py).
 - [x] Fish egg: ball? sun? a fish! Clownfish dads guard their eggs 6 to 7 days (003_fish_egg)
 - [x] Turtle egg: cookie? car? a sea turtle! Hatchlings rush to the sea, moonlight shows the way, NOAA (006_turtle_egg)
 - [x] Penguin egg: banana? book? a penguin! Dads keep the egg warm on their feet about 2 months, Nat Geo Kids (004_penguin_egg)
-- [ ] Chick egg: guesses a shoe and a cake; a chick hatches in about 21 days (needs a chick icon)
+- [x] Chick egg: guesses a shoe and a cake; a chick hatches in about 21 days (needs a chick icon) (008_chick_egg)
 - [ ] Crocodile egg: guesses a flower and a tree; baby crocodiles call from inside the egg (needs a crocodile icon)
 - [ ] Ostrich egg: guesses a ball; the biggest egg of any living bird (needs an ostrich icon)

@@ -1,0 +1,193 @@
+{
+ "id": "008_chick_egg",
+ "style": "mystery",
+ "series": "Mystery Egg",
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "chick",
+  "funny kids"
+ ],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "Ooh! A mystery egg! What's inside?",
+   "cap": "What's inside|the egg?",
+   "show": {
+    "kind": "hook",
+    "inside": "chick"
+   }
+  },
+  {
+   "hold": 0.7,
+   "pause": 0.3,
+   "show": {
+    "kind": "crack",
+    "peek": "foot"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I know! It's a shoe!",
+   "cap": "A shoe?",
+   "pause": 0.2,
+   "show": {
+    "kind": "guess",
+    "icon": "shoe"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "hold": 0.3,
+   "pause": 0.6,
+   "show": {
+    "kind": "crack",
+    "peek": "tuft",
+    "sound": "Peep!"
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Peep peep!",
+   "pause": 0
+  },
+  {
+   "by": "wibbo",
+   "say": "Aha! It's a birthday cake!",
+   "cap": "A birthday cake?",
+   "pause": 0.5,
+   "show": {
+    "kind": "guess",
+    "icon": "cake"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "say": "What do you think it is?",
+   "cap": "What do YOU think?",
+   "pause": 0.5,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "say": "Three!",
+   "pause": 0.5,
+   "show": {
+    "kind": "countdown"
+   },
+   "speed": 1.0
+  },
+  {
+   "say": "Two!",
+   "pause": 0.5,
+   "speed": 1.0
+  },
+  {
+   "say": "One!",
+   "pause": 0.5,
+   "speed": 1.0
+  },
+  {
+   "say": "It's a chick!",
+   "cap": "It's a CHICK!",
+   "pause": 0.6,
+   "show": {
+    "kind": "hatch"
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Peep peep!",
+   "pause": 0.2
+  },
+  {
+   "by": "wibbo",
+   "say": "A chick! I knew it!",
+   "cap": "I knew it!",
+   "pause": 0.3,
+   "show": {
+    "kind": "cheer"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no",
+    "head": true
+   },
+   "speed": 0.9
+  },
+  {
+   "say": "A chick takes about twenty one days to hatch.",
+   "cap": "About|21 DAYS!",
+   "pause": 0.3,
+   "show": {
+    "kind": "lesson",
+    "icon": "egg"
+   }
+  },
+  {
+   "say": "That's three whole weeks!",
+   "cap": "3 whole|WEEKS!",
+   "pause": 0.3
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Peep!",
+   "pause": 0.15
+  }
+ ],
+ "cover": {
+  "title": "What's|inside?",
+  "icon": "egg"
+ },
+ "sources": [
+  {
+   "fact": "In general, the incubation period is 21 days for chickens",
+   "url": "https://extension.msstate.edu/agriculture/livestock/poultry/incubation-duration-periods",
+   "fetched": "2026-11-26"
+  }
+ ],
+ "post": {
+  "slot": "morning",
+  "post_at": "2026-11-26T08:00:00+05:30",
+  "instagram_caption": "Wibbo found a mystery egg! Is it a shoe? A birthday cake? No, Wibbo!\n\nIt's a chick! A chicken egg takes about 21 days to hatch. That's 3 whole weeks.\n\nSilly Wibbo. Smart kids.\n\nWhat did YOU think was inside the egg?\n\n#wibbo #kidslearning #guessinggame #chicks #funnykids",
+  "youtube_title": "Is It a Shoe? A Cake? Mystery Egg! No, Wibbo!",
+  "youtube_description": "Wibbo finds a mystery egg and guesses a shoe, then a birthday cake. Count down with us to see what really hatches! A chicken egg takes about 21 days to hatch, that's 3 whole weeks.\n\nSources:\n\u2022 Mississippi State University Extension, \"Incubation Duration Periods\" (fetched Nov 26, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #MysteryEgg #Shorts",
+  "made_for_kids": true
+ },
+ "math": [
+  {
+   "expr": "21",
+   "expect": "21",
+   "note": "chicken incubation period (Mississippi State University Extension)"
+  },
+  {
+   "expr": "21/7",
+   "expect": "3",
+   "note": "21 days is 3 weeks"
+  }
+ ]
+}
