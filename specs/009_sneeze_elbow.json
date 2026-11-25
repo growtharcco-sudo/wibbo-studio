@@ -1,0 +1,360 @@
+{
+ "id": "009_sneeze_elbow",
+ "style": "tries",
+ "series": "Wibbo Tries",
+ "voices": {
+  "wibbo": {
+   "voice": "am_fenrir",
+   "speed": 0.95,
+   "fx": "rubberband=pitch=1.35:formant=shifted:pitchq=quality",
+   "polish": true
+  },
+  "narrator": {
+   "voice": "af_heart",
+   "speed": 0.95
+  },
+  "duck": {
+   "voice": "af_bella",
+   "speed": 0.9,
+   "fx": "rubberband=pitch=1.6:formant=shifted:pitchq=quality"
+  }
+ },
+ "keywords": [
+  "sneezing",
+  "tissue",
+  "healthy habits",
+  "funny kids"
+ ],
+ "phrases": [
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "Ah... ah... I need to sneeze!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "I'll put the tissue on my antenna!"
+  },
+  {
+   "by": "narrator",
+   "pause": 1.0,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "duck",
+   "pause": 0.1,
+   "say": "Quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.1,
+   "say": "The tissue goes over your nose and mouth!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Okay! I'll wave it up high!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "Sneeze into a tissue, then throw it away."
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No tissue? Use your elbow, not your hands!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "Then wash your hands."
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.6,
+   "say": "Ah... choo! Into my elbow!"
+  },
+  {
+   "by": "duck",
+   "pause": 0.2,
+   "say": "Quack quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.2,
+   "say": "Can you do a pretend elbow sneeze?"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.7,
+   "say": "See you next time!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "until": 1,
+   "els": [
+    {
+     "t": "act",
+     "at": -1,
+     "do": "intro",
+     "hold": "tissue"
+    },
+    {
+     "t": "cap",
+     "at": -1,
+     "text": "I need|to sneeze!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "wrong",
+   "until": 2,
+   "els": [
+    {
+     "t": "act",
+     "at": 1,
+     "do": "antenna"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "name": "wrong_antenna"
+    },
+    {
+     "t": "cap",
+     "at": 1,
+     "text": "On my antenna?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 5,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 2
+    },
+    {
+     "t": "act",
+     "at": 2,
+     "do": "no",
+     "recover": {
+      "at": 4
+     }
+    },
+    {
+     "t": "sfx",
+     "at": 2,
+     "name": "no"
+    },
+    {
+     "t": "cap",
+     "at": 4,
+     "text": "Nose and|MOUTH!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "wrong",
+   "until": 6,
+   "els": [
+    {
+     "t": "act",
+     "at": 5,
+     "do": "upside"
+    },
+    {
+     "t": "sfx",
+     "at": 5,
+     "name": "wrong_upside"
+    },
+    {
+     "t": "cap",
+     "at": 5,
+     "text": "Wave it|up high?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 7,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 6
+    },
+    {
+     "t": "act",
+     "at": 6,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 6,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 9,
+   "els": [
+    {
+     "t": "act",
+     "at": 7,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 7,
+     "icon": "tissue",
+     "delay2": 0.3
+    },
+    {
+     "t": "cap",
+     "at": 7,
+     "text": "Sneeze in a|TISSUE!",
+     "big": true,
+     "to": 8
+    },
+    {
+     "t": "cap",
+     "at": 8,
+     "text": "No tissue?|Your ELBOW!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 10,
+   "els": [
+    {
+     "t": "act",
+     "at": 9,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 9,
+     "icon": "soap",
+     "delay2": 0.3
+    },
+    {
+     "t": "cap",
+     "at": 9,
+     "text": "Then WASH|your hands!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "cheer",
+   "until": 12,
+   "els": [
+    {
+     "t": "act",
+     "at": 10,
+     "do": "cheer",
+     "sparkle": true
+    },
+    {
+     "t": "sfx",
+     "at": 10,
+     "delay": -0.15,
+     "name": "sparkle"
+    },
+    {
+     "t": "cap",
+     "at": 10,
+     "text": "Into my|ELBOW!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ask",
+   "until": 13,
+   "els": [
+    {
+     "t": "act",
+     "at": 12,
+     "do": "smile"
+    },
+    {
+     "t": "sfx",
+     "at": 12,
+     "delay": -0.1,
+     "name": "question"
+    },
+    {
+     "t": "cap",
+     "at": 12,
+     "text": "Can YOU|elbow sneeze?",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ending",
+   "until": "end",
+   "els": [
+    {
+     "t": "end",
+     "at": 13,
+     "delay": -0.5
+    },
+    {
+     "t": "sfx",
+     "at": 13,
+     "delay": -0.5,
+     "name": "end"
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "title": "Wibbo has|to sneeze?",
+  "icon": "tissue"
+ },
+ "sources": [
+  {
+   "fact": "Cover your mouth and nose with a tissue when you cough or sneeze; throw used tissues in the trash; if you don't have a tissue, cough or sneeze into your elbow, not your hands; wash your hands after",
+   "url": "https://www.cdc.gov/hygiene/about/coughing-and-sneezing.html",
+   "fetched": "2026-11-26"
+  }
+ ],
+ "math": [],
+ "post": {
+  "slot": "evening",
+  "post_at": "2026-11-26T18:30:00+05:30",
+  "instagram_caption": "Wibbo has to sneeze! He put the tissue on his antenna, then waved it up high. No, Wibbo!\n\nSneeze into a tissue and throw it away. No tissue? Use your elbow, not your hands. Then wash your hands.\n\nSilly Wibbo. Smart kids.\n\nCan YOU do a pretend elbow sneeze?\n\n#wibbo #kidslearning #healthyhabits #sneeze #funnykids",
+  "youtube_title": "Wibbo Has to Sneeze! Tissue on His Antenna? No, Wibbo!",
+  "youtube_description": "Wibbo needs to sneeze and gets it all wrong. Learn the right way: sneeze into a tissue and throw it away, or use your elbow if you don't have a tissue, not your hands. Then wash your hands.\n\nSources:\n• CDC, \"Healthy Habits: Coughing and Sneezing\" (fetched Nov 26, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #HealthyHabits #Shorts",
+  "made_for_kids": true
+ }
+}

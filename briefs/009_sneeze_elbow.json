@@ -1,0 +1,142 @@
+{
+ "id": "009_sneeze_elbow",
+ "style": "tries",
+ "series": "Wibbo Tries",
+ "keywords": [
+  "sneezing",
+  "tissue",
+  "healthy habits",
+  "funny kids"
+ ],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "Ah... ah... I need to sneeze!",
+   "cap": "I need|to sneeze!",
+   "show": {
+    "kind": "hook",
+    "hold": "tissue"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I'll put the tissue on my antenna!",
+   "cap": "On my antenna?",
+   "pause": 0.3,
+   "show": {
+    "kind": "wrong",
+    "how": "antenna"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 1.0,
+   "show": {
+    "kind": "no"
+   },
+   "speed": 0.9
+  },
+  {
+   "by": "duck",
+   "say": "Quack!",
+   "pause": 0.1
+  },
+  {
+   "say": "The tissue goes over your nose and mouth!",
+   "cap": "Nose and|MOUTH!",
+   "pause": 0.1
+  },
+  {
+   "by": "wibbo",
+   "say": "Okay! I'll wave it up high!",
+   "cap": "Wave it|up high?",
+   "pause": 0.5,
+   "show": {
+    "kind": "wrong",
+    "how": "upside"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.6,
+   "show": {
+    "kind": "no"
+   },
+   "speed": 0.9
+  },
+  {
+   "say": "Sneeze into a tissue, then throw it away.",
+   "cap": "Sneeze in a|TISSUE!",
+   "pause": 0.4,
+   "show": {
+    "kind": "lesson",
+    "icon": "tissue"
+   }
+  },
+  {
+   "say": "No tissue? Use your elbow, not your hands!",
+   "cap": "No tissue?|Your ELBOW!",
+   "pause": 0.4
+  },
+  {
+   "say": "Then wash your hands.",
+   "cap": "Then WASH|your hands!",
+   "pause": 0.4,
+   "show": {
+    "kind": "lesson",
+    "icon": "soap"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "Ah... choo! Into my elbow!",
+   "cap": "Into my|ELBOW!",
+   "pause": 0.6,
+   "show": {
+    "kind": "cheer",
+    "sparkle": true
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Quack quack!",
+   "pause": 0.2
+  },
+  {
+   "say": "Can you do a pretend elbow sneeze?",
+   "cap": "Can YOU|elbow sneeze?",
+   "pause": 0.2,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  }
+ ],
+ "cover": {
+  "title": "Wibbo has|to sneeze?",
+  "icon": "tissue"
+ },
+ "sources": [
+  {
+   "fact": "Cover your mouth and nose with a tissue when you cough or sneeze; throw used tissues in the trash; if you don't have a tissue, cough or sneeze into your elbow, not your hands; wash your hands after",
+   "url": "https://www.cdc.gov/hygiene/about/coughing-and-sneezing.html",
+   "fetched": "2026-11-26"
+  }
+ ],
+ "post": {
+  "slot": "evening",
+  "post_at": "2026-11-26T18:30:00+05:30",
+  "instagram_caption": "Wibbo has to sneeze! He put the tissue on his antenna, then waved it up high. No, Wibbo!\n\nSneeze into a tissue and throw it away. No tissue? Use your elbow, not your hands. Then wash your hands.\n\nSilly Wibbo. Smart kids.\n\nCan YOU do a pretend elbow sneeze?\n\n#wibbo #kidslearning #healthyhabits #sneeze #funnykids",
+  "youtube_title": "Wibbo Has to Sneeze! Tissue on His Antenna? No, Wibbo!",
+  "youtube_description": "Wibbo needs to sneeze and gets it all wrong. Learn the right way: sneeze into a tissue and throw it away, or use your elbow if you don't have a tissue, not your hands. Then wash your hands.\n\nSources:\n\u2022 CDC, \"Healthy Habits: Coughing and Sneezing\" (fetched Nov 26, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #HealthyHabits #Shorts",
+  "made_for_kids": true
+ },
+ "math": []
+}

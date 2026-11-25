@@ -7,7 +7,7 @@ New icons needed are noted; add them once to `ICONS` (props.js and kit.py).
 - [x] Brushing teeth: antenna, too much toothpaste; pea-sized, 2 minutes (000_kit_tries_example)
 - [ ] (on hold) Washing hands: skipped, the scrub-at-hands scene looked like washing his body
 - [x] Drinking water: antenna, upside down; water and milk are the best drinks, NHS (005_drinking_water)
-- [ ] Sneezing: sneezes on the mirror; sneeze into your elbow (CDC) (needs a tissue icon)
+- [x] Sneezing: sneezes on the mirror; sneeze into your elbow (CDC) (needs a tissue icon) (009_sneeze_elbow)
 - [ ] Bath time: puts socks on before the bath (sock); clothes off, then bath
 - [ ] Combing hair: combs his antenna with a fork (needs a comb icon)
 - [x] Bedtime: book upside down, book hat; Brush, Book, Bed, AAP (007_brush_book_bed)
