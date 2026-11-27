@@ -9,7 +9,7 @@ New icons needed are noted; add them once to `ICONS` (props.js and kit.py).
 - [x] Drinking water: antenna, upside down; water and milk are the best drinks, NHS (005_drinking_water)
 - [x] Sneezing: sneezes on the mirror; sneeze into your elbow (CDC) (needs a tissue icon) (009_sneeze_elbow)
 - [ ] Bath time: puts socks on before the bath (sock); clothes off, then bath
-- [ ] Combing hair: combs his antenna with a fork (needs a comb icon)
+- [x] Combing hair: combs his antenna, comb crown; comb gently, hair grows faster in summer, KidsHealth (015_comb_hair)
 - [x] Bedtime: book upside down, book hat; Brush, Book, Bed, AAP (007_brush_book_bed)
 - [x] Snack time: banana on his antenna, eats the peel; peel first, bananas grow in hands, one is a finger, Britannica (011_banana_hands)
 - [x] Getting dressed: sock on his antenna, sock hat; socks then shoes, 26 bones in each foot, IQWiG (013_socks_feet)

@@ -1,0 +1,133 @@
+{
+ "id": "015_comb_hair",
+ "style": "tries",
+ "series": "Wibbo Tries",
+ "keywords": [
+  "combing hair",
+  "comb",
+  "hair",
+  "funny kids"
+ ],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "Time to comb my hair!",
+   "cap": "Comb time!",
+   "show": {
+    "kind": "hook",
+    "hold": "comb"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I'll comb my antenna!",
+   "cap": "Comb my|antenna?",
+   "pause": 0.3,
+   "show": {
+    "kind": "wrong",
+    "how": "antenna"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 1.0,
+   "show": {
+    "kind": "no"
+   },
+   "speed": 0.9
+  },
+  {
+   "by": "duck",
+   "say": "Quack!",
+   "pause": 0.1
+  },
+  {
+   "say": "Combs are for hair, not antennas!",
+   "cap": "Combs are|for HAIR!",
+   "pause": 0.1
+  },
+  {
+   "by": "wibbo",
+   "say": "Okay! It's a comb crown!",
+   "cap": "A comb CROWN?",
+   "pause": 0.5,
+   "show": {
+    "kind": "wrong",
+    "how": "upside"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.6,
+   "show": {
+    "kind": "no"
+   },
+   "speed": 0.9
+  },
+  {
+   "say": "Comb your hair nice and gently.",
+   "cap": "Comb it|GENTLY!",
+   "pause": 0.4,
+   "show": {
+    "kind": "lesson",
+    "icon": "comb"
+   }
+  },
+  {
+   "say": "Did you know? Hair grows faster in summer than in winter!",
+   "cap": "Faster in|SUMMER!",
+   "pause": 0.5
+  },
+  {
+   "by": "wibbo",
+   "say": "Oops! I don't have any hair!",
+   "cap": "No HAIR!",
+   "pause": 0.6,
+   "show": {
+    "kind": "cheer",
+    "sparkle": true
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Quack quack!",
+   "pause": 0.2
+  },
+  {
+   "say": "Did you comb your hair today?",
+   "cap": "Did YOU comb|your hair?",
+   "pause": 0.2,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  }
+ ],
+ "cover": {
+  "title": "Wibbo combs|his antenna?",
+  "icon": "comb"
+ },
+ "sources": [
+  {
+   "fact": "Hair grows faster in summer than winter",
+   "url": "https://kidshealth.org/RadyChildrens/en/kids/hair.html",
+   "fetched": "2026-11-28"
+  }
+ ],
+ "post": {
+  "slot": "evening",
+  "post_at": "2026-11-29T18:30:00+05:30",
+  "instagram_caption": "Comb time! Wibbo combed his antenna, then wore his comb as a crown. No, Wibbo!\n\nCombs are for hair, so comb it nice and gently. Fun fact: hair grows faster in summer than in winter!\n\nSilly Wibbo. Smart kids.\n\nDid YOU comb your hair today?\n\n#wibbo #kidslearning #hair #comb #funnykids",
+  "youtube_title": "Wibbo Combs His Antenna?! No, Wibbo!",
+  "youtube_description": "It's comb time and Wibbo gets it all wrong, until he finds out he has no hair at all! Combs are for hair, so comb it nice and gently. Fun fact: hair grows faster in summer than in winter.\n\nSources:\n• Nemours KidsHealth, \"Hair, Skin, & Nails\" (fetched Nov 28, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #Hair #Shorts",
+  "made_for_kids": true
+ },
+ "math": []
+}
