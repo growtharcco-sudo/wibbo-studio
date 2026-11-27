@@ -1,0 +1,516 @@
+{
+ "id": "014_platypus_egg",
+ "style": "mystery",
+ "series": "Mystery Egg",
+ "voices": {
+  "wibbo": {
+   "voice": "am_fenrir",
+   "speed": 0.95,
+   "fx": "rubberband=pitch=1.35:formant=shifted:pitchq=quality",
+   "polish": true
+  },
+  "narrator": {
+   "voice": "af_heart",
+   "speed": 0.95
+  },
+  "duck": {
+   "voice": "af_bella",
+   "speed": 0.9,
+   "fx": "rubberband=pitch=1.6:formant=shifted:pitchq=quality"
+  }
+ },
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "platypus",
+  "funny kids"
+ ],
+ "phrases": [
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "Ooh! A mystery egg! What's inside?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "hold": 0.7
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.2,
+   "say": "I know! It's a cup!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "hold": 0.3
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Aha! It's a little car!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "What do you think it is?"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Three!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Two!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "One!",
+   "speed": 1.0
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "It's a baby platypus!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "A platypus! I knew it!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "The platypus is a mammal that lays eggs!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.3,
+   "say": "When the babies hatch, they drink mom's milk!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.7,
+   "say": "See you next time!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "until": 1,
+   "els": [
+    {
+     "t": "act",
+     "at": -1,
+     "do": "intro"
+    },
+    {
+     "t": "egg",
+     "at": -1,
+     "inside": "platypus",
+     "cracks": [
+      {
+       "at": 1,
+       "delay": 0.0,
+       "peek": null,
+       "sound": "Tap!"
+      },
+      {
+       "at": 4,
+       "delay": 0.0,
+       "peek": null,
+       "sound": "Tap!"
+      }
+     ],
+     "rumble": {
+      "at": 8
+     },
+     "hatch": {
+      "at": 11,
+      "delay": -0.2
+     },
+     "jump": {
+      "at": 13,
+      "delay": 0.1
+     }
+    },
+    {
+     "t": "cap",
+     "at": -1,
+     "text": "What's inside|the egg?",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "crack",
+   "until": 2,
+   "els": [
+    {
+     "t": "act",
+     "at": 1,
+     "do": "surprise"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "name": "crack"
+    }
+   ]
+  },
+  {
+   "kind": "guess",
+   "until": 3,
+   "els": [
+    {
+     "t": "act",
+     "at": 2,
+     "do": "guess"
+    },
+    {
+     "t": "bubble",
+     "at": 2,
+     "icon": "cup"
+    },
+    {
+     "t": "sfx",
+     "at": 2,
+     "delay": 0.5,
+     "name": "drop"
+    },
+    {
+     "t": "cap",
+     "at": 2,
+     "text": "A cup?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 4,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 3
+    },
+    {
+     "t": "act",
+     "at": 3,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 3,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "crack",
+   "until": 5,
+   "els": [
+    {
+     "t": "act",
+     "at": 4,
+     "do": "surprise"
+    },
+    {
+     "t": "sfx",
+     "at": 4,
+     "name": "crack"
+    }
+   ]
+  },
+  {
+   "kind": "guess",
+   "until": 6,
+   "els": [
+    {
+     "t": "act",
+     "at": 5,
+     "do": "guess"
+    },
+    {
+     "t": "bubble",
+     "at": 5,
+     "icon": "car"
+    },
+    {
+     "t": "sfx",
+     "at": 5,
+     "delay": 0.5,
+     "name": "drop"
+    },
+    {
+     "t": "cap",
+     "at": 5,
+     "text": "A little car?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 7,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 6
+    },
+    {
+     "t": "act",
+     "at": 6,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 6,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "ask",
+   "until": 8,
+   "els": [
+    {
+     "t": "act",
+     "at": 7,
+     "do": "lean"
+    },
+    {
+     "t": "sfx",
+     "at": 7,
+     "delay": -0.1,
+     "name": "question"
+    },
+    {
+     "t": "cap",
+     "at": 7,
+     "text": "What do YOU think?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "countdown",
+   "until": 11,
+   "els": [
+    {
+     "t": "digit",
+     "at": 8,
+     "n": "3"
+    },
+    {
+     "t": "digit",
+     "at": 9,
+     "n": "2"
+    },
+    {
+     "t": "digit",
+     "at": 10,
+     "n": "1"
+    },
+    {
+     "t": "sfx",
+     "at": 8,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "sfx",
+     "at": 9,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "sfx",
+     "at": 10,
+     "delay": -0.02,
+     "name": "tick"
+    },
+    {
+     "t": "act",
+     "at": 8,
+     "do": "lean",
+     "digits": [
+      {
+       "at": 8
+      },
+      {
+       "at": 9
+      },
+      {
+       "at": 10
+      }
+     ]
+    },
+    {
+     "t": "duckmusic",
+     "at": 8,
+     "delay": -0.3
+    }
+   ]
+  },
+  {
+   "kind": "hatch",
+   "until": 12,
+   "els": [
+    {
+     "t": "act",
+     "at": 11,
+     "delay": -0.2,
+     "do": "shock"
+    },
+    {
+     "t": "sfx",
+     "at": 11,
+     "delay": -0.2,
+     "name": "hatch"
+    },
+    {
+     "t": "cap",
+     "at": 11,
+     "text": "A baby|PLATYPUS!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "cheer",
+   "until": 13,
+   "els": [
+    {
+     "t": "act",
+     "at": 12,
+     "do": "cheer"
+    },
+    {
+     "t": "cap",
+     "at": 12,
+     "text": "I knew it!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 14,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 13
+    },
+    {
+     "t": "act",
+     "at": 13,
+     "do": "no",
+     "head": true
+    },
+    {
+     "t": "sfx",
+     "at": 13,
+     "name": "no_head"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 16,
+   "els": [
+    {
+     "t": "act",
+     "at": 14,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 14,
+     "icon": "egg",
+     "delay2": 0.3
+    },
+    {
+     "t": "cap",
+     "at": 14,
+     "text": "This mammal|lays EGGS!",
+     "big": true,
+     "to": 15
+    },
+    {
+     "t": "cap",
+     "at": 15,
+     "text": "Babies drink|MILK!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ending",
+   "until": "end",
+   "els": [
+    {
+     "t": "end",
+     "at": 16,
+     "delay": -0.5,
+     "buddy": "platypus"
+    },
+    {
+     "t": "sfx",
+     "at": 16,
+     "delay": -0.5,
+     "name": "end"
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "title": "What's in|this egg?",
+  "icon": "egg"
+ },
+ "sources": [
+  {
+   "fact": "The platypus is a mammal that lays eggs; as a monotreme (like the echidna) it lays eggs, incubates them, and nurses its young when they hatch",
+   "url": "https://sdzsafaripark.org/animals/platypus",
+   "fetched": "2026-11-28"
+  }
+ ],
+ "math": [],
+ "post": {
+  "slot": "morning",
+  "post_at": "2026-11-29T08:00:00+05:30",
+  "instagram_caption": "Wibbo found a mystery egg! Is it a cup? A little car? No, Wibbo!\n\nIt's a baby platypus! The platypus is a mammal that lays eggs, and when the babies hatch, they drink mom's milk.\n\nSilly Wibbo. Smart kids.\n\nDid YOU know a mammal could lay eggs?\n\n#wibbo #kidslearning #guessinggame #platypus #funnykids",
+  "youtube_title": "A Cup? A Car? What's in This Egg? No, Wibbo!",
+  "youtube_description": "Wibbo finds a mystery egg and guesses a cup, then a little car. Count down with us to see what really hatches! The platypus is a mammal that lays eggs, and when the babies hatch, they drink mom's milk.\n\nSources:\n• San Diego Zoo Wildlife Alliance, \"Platypus\" (fetched Nov 28, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #MysteryEgg #Shorts",
+  "made_for_kids": true
+ }
+}

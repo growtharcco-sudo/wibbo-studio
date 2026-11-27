@@ -1,0 +1,166 @@
+{
+ "id": "014_platypus_egg",
+ "style": "mystery",
+ "series": "Mystery Egg",
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "platypus",
+  "funny kids"
+ ],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "Ooh! A mystery egg! What's inside?",
+   "cap": "What's inside|the egg?",
+   "show": {
+    "kind": "hook",
+    "inside": "platypus"
+   }
+  },
+  {
+   "hold": 0.7,
+   "pause": 0.3,
+   "show": {
+    "kind": "crack",
+    "sound": "Tap!"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I know! It's a cup!",
+   "cap": "A cup?",
+   "pause": 0.2,
+   "show": {
+    "kind": "guess",
+    "icon": "cup"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "hold": 0.3,
+   "pause": 0.6,
+   "show": {
+    "kind": "crack",
+    "sound": "Tap!"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "Aha! It's a little car!",
+   "cap": "A little car?",
+   "pause": 0.5,
+   "show": {
+    "kind": "guess",
+    "icon": "car"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "say": "What do you think it is?",
+   "cap": "What do YOU think?",
+   "pause": 0.5,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "say": "Three!",
+   "pause": 0.5,
+   "show": {
+    "kind": "countdown"
+   },
+   "speed": 1.0
+  },
+  {
+   "say": "Two!",
+   "pause": 0.5,
+   "speed": 1.0
+  },
+  {
+   "say": "One!",
+   "pause": 0.5,
+   "speed": 1.0
+  },
+  {
+   "say": "It's a baby platypus!",
+   "cap": "A baby|PLATYPUS!",
+   "pause": 0.6,
+   "show": {
+    "kind": "hatch"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "A platypus! I knew it!",
+   "cap": "I knew it!",
+   "pause": 0.3,
+   "show": {
+    "kind": "cheer"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no",
+    "head": true
+   },
+   "speed": 0.9
+  },
+  {
+   "say": "The platypus is a mammal that lays eggs!",
+   "cap": "This mammal|lays EGGS!",
+   "pause": 0.3,
+   "show": {
+    "kind": "lesson",
+    "icon": "egg"
+   }
+  },
+  {
+   "say": "When the babies hatch, they drink mom's milk!",
+   "cap": "Babies drink|MILK!",
+   "pause": 0.3
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  }
+ ],
+ "cover": {
+  "title": "What's in|this egg?",
+  "icon": "egg"
+ },
+ "sources": [
+  {
+   "fact": "The platypus is a mammal that lays eggs; as a monotreme (like the echidna) it lays eggs, incubates them, and nurses its young when they hatch",
+   "url": "https://sdzsafaripark.org/animals/platypus",
+   "fetched": "2026-11-28"
+  }
+ ],
+ "post": {
+  "slot": "morning",
+  "post_at": "2026-11-29T08:00:00+05:30",
+  "instagram_caption": "Wibbo found a mystery egg! Is it a cup? A little car? No, Wibbo!\n\nIt's a baby platypus! The platypus is a mammal that lays eggs, and when the babies hatch, they drink mom's milk.\n\nSilly Wibbo. Smart kids.\n\nDid YOU know a mammal could lay eggs?\n\n#wibbo #kidslearning #guessinggame #platypus #funnykids",
+  "youtube_title": "A Cup? A Car? What's in This Egg? No, Wibbo!",
+  "youtube_description": "Wibbo finds a mystery egg and guesses a cup, then a little car. Count down with us to see what really hatches! The platypus is a mammal that lays eggs, and when the babies hatch, they drink mom's milk.\n\nSources:\n• San Diego Zoo Wildlife Alliance, \"Platypus\" (fetched Nov 28, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #MysteryEgg #Shorts",
+  "made_for_kids": true
+ },
+ "math": []
+}
