@@ -1,0 +1,166 @@
+{
+ "id": "012_crocodile_egg",
+ "style": "mystery",
+ "series": "Mystery Egg",
+ "keywords": [
+  "mystery egg",
+  "guessing game",
+  "crocodile",
+  "funny kids"
+ ],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "Ooh! A mystery egg! What's inside?",
+   "cap": "What's inside|the egg?",
+   "show": {
+    "kind": "hook",
+    "inside": "crocodile"
+   }
+  },
+  {
+   "hold": 0.7,
+   "pause": 0.3,
+   "show": {
+    "kind": "crack",
+    "sound": "Umph!"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I know! It's a flower!",
+   "cap": "A flower?",
+   "pause": 0.2,
+   "show": {
+    "kind": "guess",
+    "icon": "flower"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "hold": 0.3,
+   "pause": 0.6,
+   "show": {
+    "kind": "crack",
+    "sound": "Umph!"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "Aha! It's a tree!",
+   "cap": "A tree?",
+   "pause": 0.5,
+   "show": {
+    "kind": "guess",
+    "icon": "tree"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no"
+   }
+  },
+  {
+   "say": "What do you think it is?",
+   "cap": "What do YOU think?",
+   "pause": 0.5,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "say": "Three!",
+   "pause": 0.5,
+   "show": {
+    "kind": "countdown"
+   },
+   "speed": 1.0
+  },
+  {
+   "say": "Two!",
+   "pause": 0.5,
+   "speed": 1.0
+  },
+  {
+   "say": "One!",
+   "pause": 0.5,
+   "speed": 1.0
+  },
+  {
+   "say": "It's a baby crocodile!",
+   "cap": "A baby|CROCODILE!",
+   "pause": 0.6,
+   "show": {
+    "kind": "hatch"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "A crocodile! I knew it!",
+   "cap": "I knew it!",
+   "pause": 0.3,
+   "show": {
+    "kind": "cheer"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.4,
+   "show": {
+    "kind": "no",
+    "head": true
+   },
+   "speed": 0.9
+  },
+  {
+   "say": "Baby crocodiles call out from inside their eggs!",
+   "cap": "They CALL from|inside the egg!",
+   "pause": 0.3,
+   "show": {
+    "kind": "lesson",
+    "icon": "egg"
+   }
+  },
+  {
+   "say": "It tells their mom it's time to dig them out!",
+   "cap": "Mom digs|them OUT!",
+   "pause": 0.3
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  }
+ ],
+ "cover": {
+  "title": "What's in the|mystery egg?",
+  "icon": "egg"
+ },
+ "sources": [
+  {
+   "fact": "Baby crocodiles call from inside their eggs when it is time to hatch; the calls tell their siblings and tell the mother it is time to dig her babies out",
+   "url": "https://www.nationalgeographic.com/science/article/crocodiles-signal-hatching-time-by-calling-from-inside-their-eggs",
+   "fetched": "2026-11-28"
+  }
+ ],
+ "post": {
+  "slot": "morning",
+  "post_at": "2026-11-28T08:00:00+05:30",
+  "instagram_caption": "Wibbo found a mystery egg that goes umph! Is it a flower? A tree? No, Wibbo!\n\nIt's a baby crocodile! Baby crocodiles call out from inside their eggs, and that tells their mom it's time to dig them out.\n\nSilly Wibbo. Smart kids.\n\nWhat did YOU think was inside the egg?\n\n#wibbo #kidslearning #guessinggame #crocodile #funnykids",
+  "youtube_title": "The Mystery Egg Goes Umph! What Is It? No, Wibbo!",
+  "youtube_description": "Wibbo finds a mystery egg that makes little sounds and guesses a flower, then a tree. Count down with us to see what really hatches! Baby crocodiles call out from inside their eggs, and the calls tell their mom it's time to dig them out.\n\nSources:\n• National Geographic, \"Crocodiles signal hatching time by calling from inside their eggs\" (fetched Nov 28, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #MysteryEgg #Shorts",
+  "made_for_kids": true
+ },
+ "math": []
+}
