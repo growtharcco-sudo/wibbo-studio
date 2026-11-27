@@ -1,0 +1,139 @@
+{
+ "id": "013_socks_feet",
+ "style": "tries",
+ "series": "Wibbo Tries",
+ "keywords": [
+  "getting dressed",
+  "socks",
+  "feet",
+  "funny kids"
+ ],
+ "beats": [
+  {
+   "by": "wibbo",
+   "say": "Time to get dressed! My sock!",
+   "cap": "Get dressed!",
+   "show": {
+    "kind": "hook",
+    "hold": "sock"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "I'll put it on my antenna!",
+   "cap": "On my antenna?",
+   "pause": 0.3,
+   "show": {
+    "kind": "wrong",
+    "how": "antenna"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 1.0,
+   "show": {
+    "kind": "no"
+   },
+   "speed": 0.9
+  },
+  {
+   "by": "duck",
+   "say": "Quack!",
+   "pause": 0.1
+  },
+  {
+   "say": "Socks are not for your antenna!",
+   "cap": "Not for your|ANTENNA!",
+   "pause": 0.1
+  },
+  {
+   "by": "wibbo",
+   "say": "Okay! It's a sock hat!",
+   "cap": "A sock HAT?",
+   "pause": 0.5,
+   "show": {
+    "kind": "wrong",
+    "how": "upside"
+   }
+  },
+  {
+   "say": "No, Wibbo!",
+   "pause": 0.6,
+   "show": {
+    "kind": "no"
+   },
+   "speed": 0.9
+  },
+  {
+   "say": "Socks go on your feet. Then your shoes!",
+   "cap": "Socks, then|SHOES!",
+   "pause": 0.4,
+   "show": {
+    "kind": "lesson",
+    "icon": "shoe"
+   }
+  },
+  {
+   "say": "Did you know? Each foot has twenty six bones!",
+   "cap": "26 bones in|each FOOT!",
+   "pause": 0.5
+  },
+  {
+   "by": "wibbo",
+   "say": "Wow! Happy feet!",
+   "cap": "Happy|FEET!",
+   "pause": 0.6,
+   "show": {
+    "kind": "cheer",
+    "sparkle": true
+   }
+  },
+  {
+   "by": "duck",
+   "say": "Quack quack!",
+   "pause": 0.2
+  },
+  {
+   "say": "What color are your socks today?",
+   "cap": "Your sock|COLOR?",
+   "pause": 0.2,
+   "show": {
+    "kind": "ask"
+   }
+  },
+  {
+   "by": "wibbo",
+   "say": "See you next time!",
+   "pause": 0.7,
+   "show": {
+    "kind": "ending"
+   }
+  }
+ ],
+ "cover": {
+  "title": "Where do|socks go?",
+  "icon": "sock"
+ },
+ "sources": [
+  {
+   "fact": "The human foot consists of 26 bones in total (7 tarsals, 5 metatarsals, 14 phalanges)",
+   "url": "https://www.informedhealth.org/how-do-our-feet-work.html",
+   "fetched": "2026-11-28"
+  }
+ ],
+ "post": {
+  "slot": "evening",
+  "post_at": "2026-11-28T18:30:00+05:30",
+  "instagram_caption": "Wibbo is getting dressed! He put his sock on his antenna, then made a sock hat. No, Wibbo!\n\nSocks go on your feet, then your shoes. Fun fact: each foot has 26 bones!\n\nSilly Wibbo. Smart kids.\n\nWhat color are YOUR socks today?\n\n#wibbo #kidslearning #gettingdressed #socks #funnykids",
+  "youtube_title": "Wibbo Wears a Sock Hat?! No, Wibbo!",
+  "youtube_description": "Wibbo is getting dressed and puts his sock everywhere except his feet. Socks go on your feet, then your shoes! Fun fact: each of your feet has 26 bones.\n\nSources:\n• InformedHealth.org (IQWiG), \"How do our feet work?\" (fetched Nov 28, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #GettingDressed #Shorts",
+  "made_for_kids": true
+ },
+ "math": [
+  {
+   "expr": "7 + 5 + 14",
+   "expect": "26",
+   "note": "bones in each foot: 7 tarsals + 5 metatarsals + 14 phalanges (InformedHealth.org, IQWiG)"
+  }
+ ]
+}

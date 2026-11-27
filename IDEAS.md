@@ -12,7 +12,7 @@ New icons needed are noted; add them once to `ICONS` (props.js and kit.py).
 - [ ] Combing hair: combs his antenna with a fork (needs a comb icon)
 - [x] Bedtime: book upside down, book hat; Brush, Book, Bed, AAP (007_brush_book_bed)
 - [x] Snack time: banana on his antenna, eats the peel; peel first, bananas grow in hands, one is a finger, Britannica (011_banana_hands)
-- [ ] Getting dressed: sock on his antenna (sock); socks go on feet, then shoes (shoe)
+- [x] Getting dressed: sock on his antenna, sock hat; socks then shoes, 26 bones in each foot, IQWiG (013_socks_feet)
 
 ## mystery (sky, egg): Wibbo guesses wrong, countdown, reveal
 - [x] Duck egg: carrot? bus? a duck! Duck eggs hatch in 23 to 30 days (posted as 002_mystery_egg)

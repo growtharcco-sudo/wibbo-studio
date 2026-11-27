@@ -1,0 +1,337 @@
+{
+ "id": "013_socks_feet",
+ "style": "tries",
+ "series": "Wibbo Tries",
+ "voices": {
+  "wibbo": {
+   "voice": "am_fenrir",
+   "speed": 0.95,
+   "fx": "rubberband=pitch=1.35:formant=shifted:pitchq=quality",
+   "polish": true
+  },
+  "narrator": {
+   "voice": "af_heart",
+   "speed": 0.95
+  },
+  "duck": {
+   "voice": "af_bella",
+   "speed": 0.9,
+   "fx": "rubberband=pitch=1.6:formant=shifted:pitchq=quality"
+  }
+ },
+ "keywords": [
+  "getting dressed",
+  "socks",
+  "feet",
+  "funny kids"
+ ],
+ "phrases": [
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "Time to get dressed! My sock!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.3,
+   "say": "I'll put it on my antenna!"
+  },
+  {
+   "by": "narrator",
+   "pause": 1.0,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "duck",
+   "pause": 0.1,
+   "say": "Quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.1,
+   "say": "Socks are not for your antenna!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.5,
+   "say": "Okay! It's a sock hat!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.6,
+   "say": "No, Wibbo!",
+   "speed": 0.9
+  },
+  {
+   "by": "narrator",
+   "pause": 0.4,
+   "say": "Socks go on your feet. Then your shoes!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.5,
+   "say": "Did you know? Each foot has twenty six bones!"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.6,
+   "say": "Wow! Happy feet!"
+  },
+  {
+   "by": "duck",
+   "pause": 0.2,
+   "say": "Quack quack!"
+  },
+  {
+   "by": "narrator",
+   "pause": 0.2,
+   "say": "What color are your socks today?"
+  },
+  {
+   "by": "wibbo",
+   "pause": 0.7,
+   "say": "See you next time!"
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "hook",
+   "until": 1,
+   "els": [
+    {
+     "t": "act",
+     "at": -1,
+     "do": "intro",
+     "hold": "sock"
+    },
+    {
+     "t": "cap",
+     "at": -1,
+     "text": "Get dressed!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "wrong",
+   "until": 2,
+   "els": [
+    {
+     "t": "act",
+     "at": 1,
+     "do": "antenna"
+    },
+    {
+     "t": "sfx",
+     "at": 1,
+     "name": "wrong_antenna"
+    },
+    {
+     "t": "cap",
+     "at": 1,
+     "text": "On my antenna?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 5,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 2
+    },
+    {
+     "t": "act",
+     "at": 2,
+     "do": "no",
+     "recover": {
+      "at": 4
+     }
+    },
+    {
+     "t": "sfx",
+     "at": 2,
+     "name": "no"
+    },
+    {
+     "t": "cap",
+     "at": 4,
+     "text": "Not for your|ANTENNA!",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "wrong",
+   "until": 6,
+   "els": [
+    {
+     "t": "act",
+     "at": 5,
+     "do": "upside"
+    },
+    {
+     "t": "sfx",
+     "at": 5,
+     "name": "wrong_upside"
+    },
+    {
+     "t": "cap",
+     "at": 5,
+     "text": "A sock HAT?",
+     "big": false,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "no",
+   "until": 7,
+   "els": [
+    {
+     "t": "stamp",
+     "at": 6
+    },
+    {
+     "t": "act",
+     "at": 6,
+     "do": "no"
+    },
+    {
+     "t": "sfx",
+     "at": 6,
+     "name": "no"
+    }
+   ]
+  },
+  {
+   "kind": "lesson",
+   "until": 9,
+   "els": [
+    {
+     "t": "act",
+     "at": 7,
+     "do": "lesson"
+    },
+    {
+     "t": "callout",
+     "at": 7,
+     "icon": "shoe",
+     "delay2": 0.3
+    },
+    {
+     "t": "cap",
+     "at": 7,
+     "text": "Socks, then|SHOES!",
+     "big": true,
+     "to": 8
+    },
+    {
+     "t": "cap",
+     "at": 8,
+     "text": "26 bones in|each FOOT!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "cheer",
+   "until": 11,
+   "els": [
+    {
+     "t": "act",
+     "at": 9,
+     "do": "cheer",
+     "sparkle": true
+    },
+    {
+     "t": "sfx",
+     "at": 9,
+     "delay": -0.15,
+     "name": "sparkle"
+    },
+    {
+     "t": "cap",
+     "at": 9,
+     "text": "Happy|FEET!",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ask",
+   "until": 12,
+   "els": [
+    {
+     "t": "act",
+     "at": 11,
+     "do": "smile"
+    },
+    {
+     "t": "sfx",
+     "at": 11,
+     "delay": -0.1,
+     "name": "question"
+    },
+    {
+     "t": "cap",
+     "at": 11,
+     "text": "Your sock|COLOR?",
+     "big": true,
+     "to": "end"
+    }
+   ]
+  },
+  {
+   "kind": "ending",
+   "until": "end",
+   "els": [
+    {
+     "t": "end",
+     "at": 12,
+     "delay": -0.5
+    },
+    {
+     "t": "sfx",
+     "at": 12,
+     "delay": -0.5,
+     "name": "end"
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "title": "Where do|socks go?",
+  "icon": "sock"
+ },
+ "sources": [
+  {
+   "fact": "The human foot consists of 26 bones in total (7 tarsals, 5 metatarsals, 14 phalanges)",
+   "url": "https://www.informedhealth.org/how-do-our-feet-work.html",
+   "fetched": "2026-11-28"
+  }
+ ],
+ "math": [
+  {
+   "expr": "7 + 5 + 14",
+   "expect": "26",
+   "note": "bones in each foot: 7 tarsals + 5 metatarsals + 14 phalanges (InformedHealth.org, IQWiG)"
+  }
+ ],
+ "post": {
+  "slot": "evening",
+  "post_at": "2026-11-28T18:30:00+05:30",
+  "instagram_caption": "Wibbo is getting dressed! He put his sock on his antenna, then made a sock hat. No, Wibbo!\n\nSocks go on your feet, then your shoes. Fun fact: each foot has 26 bones!\n\nSilly Wibbo. Smart kids.\n\nWhat color are YOUR socks today?\n\n#wibbo #kidslearning #gettingdressed #socks #funnykids",
+  "youtube_title": "Wibbo Wears a Sock Hat?! No, Wibbo!",
+  "youtube_description": "Wibbo is getting dressed and puts his sock everywhere except his feet. Socks go on your feet, then your shoes! Fun fact: each of your feet has 26 bones.\n\nSources:\n• InformedHealth.org (IQWiG), \"How do our feet work?\" (fetched Nov 28, 2026)\n\nWibbo: silly Wibbo, smart kids. Instagram: @hellowibbo\n\n#Wibbo #GettingDressed #Shorts",
+  "made_for_kids": true
+ }
+}
